@@ -77,6 +77,7 @@
             this.btnConfirmLogin.TabIndex = 4;
             this.btnConfirmLogin.Text = "Přihlásit";
             this.btnConfirmLogin.UseVisualStyleBackColor = true;
+            this.btnConfirmLogin.Click += new System.EventHandler(this.btnConfirmLogin_Click);
             // 
             // btnCancelLogin
             // 
