@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.IO.Pipes;
 using Microsoft.SqlServer.Server;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ZaverecnyProjektIT4_Machacek
 {
@@ -24,7 +25,7 @@ namespace ZaverecnyProjektIT4_Machacek
                 using(SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "INSERT INTO [User] (RoleID, Name, LastName, PasswordHash, BirthDate, Email, Phone) VALUES (@roleID, @firstName, @lastName, @password, @birthDate, @email, @phone)";
+                    command.CommandText = @"INSERT INTO [User] (RoleID, Name, LastName, PasswordHash, BirthDate, Email, Phone) VALUES (@roleID, @firstName, @lastName, @password, @birthDate, @email, @phone)";
                     command.Parameters.AddWithValue("roleID", role);
                     command.Parameters.AddWithValue("firstName", firstName);
                     command.Parameters.AddWithValue("lastName", lastName);
@@ -39,6 +40,31 @@ namespace ZaverecnyProjektIT4_Machacek
             }
 
         }
+
+        public User GetUser(string email)
+        {
+            User user = null;
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using(SqlCommand command = connection.CreateCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = @"SELECT * FROM [User] WHERE Email=@email";
+                    command.Parameters.AddWithValue("email", email);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if(reader.Read())
+                        {
+                            user = new User(reader["Email"].ToString(), reader["PasswordHash"].ToString());
+                        }
+                    }
+                }
+                connection.Close();
+            }
+            return user;
+        } 
 
     }
 }

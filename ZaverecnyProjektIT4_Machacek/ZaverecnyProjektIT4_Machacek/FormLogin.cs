@@ -22,7 +22,29 @@ namespace ZaverecnyProjektIT4_Machacek
 
         private void btnConfirmLogin_Click(object sender, EventArgs e)
         {
-            int roleID = 1;
+            string email = txtEmailLogin.Text;
+            string password = txtPasswordLogin.Text;
+            var user = sqlRepository.GetUser(email);
+            if(user != null)
+            {
+                if (user.VerifyPassword(password))
+                {
+                    MessageBox.Show("Vše v pořádku!");
+                }
+                else
+                {
+                    MessageBox.Show("Špatné heslo!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Neznámý uživatel!");
+            }
+
+
+
+
+            /*int roleID = 1;
             string firstName = "Admin";
             string lastName = "Admin";
             string password = "Admin";
@@ -33,6 +55,7 @@ namespace ZaverecnyProjektIT4_Machacek
             sqlRepository.CreateNewUser(roleID, firstName, lastName, password, birthDate, email, phone);
 
             MessageBox.Show("Ahoj");
+            */
         }
     }
 }

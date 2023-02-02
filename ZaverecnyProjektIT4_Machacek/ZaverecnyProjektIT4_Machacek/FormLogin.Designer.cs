@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPersonalNumberLogin = new System.Windows.Forms.TextBox();
+            this.txtEmailLogin = new System.Windows.Forms.TextBox();
             this.txtPasswordLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnConfirmLogin = new System.Windows.Forms.Button();
@@ -42,16 +42,16 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(32, 98);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Osobní číslo";
+            this.label1.Text = "E-mail";
             // 
-            // txtPersonalNumberLogin
+            // txtEmailLogin
             // 
-            this.txtPersonalNumberLogin.Location = new System.Drawing.Point(106, 95);
-            this.txtPersonalNumberLogin.Name = "txtPersonalNumberLogin";
-            this.txtPersonalNumberLogin.Size = new System.Drawing.Size(172, 20);
-            this.txtPersonalNumberLogin.TabIndex = 1;
+            this.txtEmailLogin.Location = new System.Drawing.Point(106, 95);
+            this.txtEmailLogin.Name = "txtEmailLogin";
+            this.txtEmailLogin.Size = new System.Drawing.Size(172, 20);
+            this.txtEmailLogin.TabIndex = 1;
             // 
             // txtPasswordLogin
             // 
@@ -108,7 +108,7 @@
             this.Controls.Add(this.btnConfirmLogin);
             this.Controls.Add(this.txtPasswordLogin);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtPersonalNumberLogin);
+            this.Controls.Add(this.txtEmailLogin);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -123,7 +123,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPersonalNumberLogin;
+        private System.Windows.Forms.TextBox txtEmailLogin;
         private System.Windows.Forms.TextBox txtPasswordLogin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnConfirmLogin;
