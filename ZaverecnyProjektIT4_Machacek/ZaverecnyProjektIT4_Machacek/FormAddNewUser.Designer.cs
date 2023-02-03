@@ -55,8 +55,6 @@
             this.comboBoxRoleNewUser = new System.Windows.Forms.ComboBox();
             this.bntExitProgramNewUser = new System.Windows.Forms.Button();
             this.btnAddNewUserConfirm = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblPersonalNumberOfNewUser = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -298,32 +296,11 @@
             this.btnAddNewUserConfirm.UseVisualStyleBackColor = true;
             this.btnAddNewUserConfirm.Click += new System.EventHandler(this.btnAddNewUserConfirm_Click);
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(420, 65);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(207, 13);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "Bude automaticky přiděleno osobní číslo: ";
-            // 
-            // lblPersonalNumberOfNewUser
-            // 
-            this.lblPersonalNumberOfNewUser.AutoSize = true;
-            this.lblPersonalNumberOfNewUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPersonalNumberOfNewUser.Location = new System.Drawing.Point(633, 65);
-            this.lblPersonalNumberOfNewUser.Name = "lblPersonalNumberOfNewUser";
-            this.lblPersonalNumberOfNewUser.Size = new System.Drawing.Size(48, 13);
-            this.lblPersonalNumberOfNewUser.TabIndex = 26;
-            this.lblPersonalNumberOfNewUser.Text = "label11";
-            // 
             // FormAddNewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblPersonalNumberOfNewUser);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnAddNewUserConfirm);
             this.Controls.Add(this.bntExitProgramNewUser);
             this.Controls.Add(this.comboBoxRoleNewUser);
@@ -383,7 +360,5 @@
         private System.Windows.Forms.ComboBox comboBoxRoleNewUser;
         private System.Windows.Forms.Button bntExitProgramNewUser;
         private System.Windows.Forms.Button btnAddNewUserConfirm;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblPersonalNumberOfNewUser;
     }
 }

@@ -19,12 +19,28 @@ namespace ZaverecnyProjektIT4_Machacek
             User = user;
             InitializeComponent();
             lblAdminPersonalNumber.Text = user.PersonalNumber;
-            InitializeComponent();
+
         }
 
         private void btnAddNewUserConfirm_Click(object sender, EventArgs e)
         {
-           
+            string firstName = txtFirstNameNewUser.Text;
+            string lastName = txtLastNameNewUser.Text;
+            string phoneNumber = txtPhoneNumberNewUser.Text;
+            string email = txtEmailNewUser.Text;
+            string password = txtPasswordNewUser.Text;
+            DateTime birthDate = dateTimePickerBirthDateNewUser.Value.Date;
+            int role = 2;
+            //try
+            //{
+            sqlRepository.CreateNewUser(role, firstName, lastName, password, birthDate, email, phoneNumber);
+            //}
+            //catch
+            //{
+            //}
+
+
+
         }
     }
 }

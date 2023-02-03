@@ -26,22 +26,24 @@ namespace ZaverecnyProjektIT4_Machacek
                 connection.Open();
                 using (SqlCommand command = new SqlCommand())
                 {
-                    int perosnalNumber = random.Next(100000, 1000000); //Vytvoří random číslo
+                    int personalNumber = random.Next(100000, 1000000); //Vytvoří random číslo
                     command.Connection = connection;
-                    command.CommandText = @"SELECT COUNT(*) FROM [User] WHERE PersonalNumber=@perosnalNumber";
+                    command.CommandText = @"SELECT COUNT(*) FROM [User] WHERE PersonalNumber=@personalNumber";
 
-                    command.Parameters.AddWithValue("personalNumber", perosnalNumber);
+                    command.Parameters.AddWithValue("personalNumber", personalNumber);
                     int count = (int)command.ExecuteScalar();
-                    do
+                    if (count > 0) //Pokud už se číslo vyskutuje v databázi, tak bude probíhat cyklus while, dokud se nevygeneruje číslo, ktetré ještě není v databázi
                     {
-                        perosnalNumber = random.Next(100000, 1000000);
+                        do
+                        {
+                            personalNumber = random.Next(100000, 1000000);
+                        }
+                        while (count > 0); //Dokud budenáhodné číslo již existovat, bude stále tvořit nové číslo a až bude číslo jediněčné, uloží ho do tabulky
                     }
-                    while (count > 0); //Dokud budenáhodné číslo již existovat, bude stále tvořit nové číslo a až bude číslo jediněčné, uloží ho do tabulky
-                    
-                    if (count == 0)
+                    else if (count == 0) //Když vygenerované číslo ještě nebude v databázi, přidá se PersonalNuber do databáze společně s ostatníma datama a vytvoří se nový uživatel
                     {
-
-                        command.CommandText = @"INSERT INTO [User] (RoleID, Name, LastName, PasswordHash, BirthDate, Email, Phone, PersonalNumber) VALUES (@roleID, @firstName, @lastName, @password, @birthDate, @email, @phone, @perosnalNumber)";
+                        command.Parameters.Clear(); //Zajistí, abych mohl použít personalNumber 2x
+                        command.CommandText = @"INSERT INTO [User] (RoleID, Name, LastName, PasswordHash, BirthDate, Email, Phone, PersonalNumber) VALUES (@roleID, @firstName, @lastName, @password, @birthDate, @email, @phone, @personalNumber)";
                         command.Parameters.AddWithValue("roleID", role);
                         command.Parameters.AddWithValue("firstName", firstName);
                         command.Parameters.AddWithValue("lastName", lastName);
@@ -49,7 +51,7 @@ namespace ZaverecnyProjektIT4_Machacek
                         command.Parameters.AddWithValue("birthDate", birthDate);
                         command.Parameters.AddWithValue("email", email);
                         command.Parameters.AddWithValue("phone", phone);
-                        command.Parameters.AddWithValue("personalNumber", perosnalNumber);
+                        command.Parameters.AddWithValue("personalNumber", personalNumber);
 
                         command.ExecuteNonQuery();
                     }
