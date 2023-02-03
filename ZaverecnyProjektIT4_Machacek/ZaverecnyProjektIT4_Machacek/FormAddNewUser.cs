@@ -12,9 +12,19 @@ namespace ZaverecnyProjektIT4_Machacek
 {
     public partial class FormAddNewUser : Form
     {
-        public FormAddNewUser()
+        public User User { get; }
+        SqlRepository sqlRepository = new SqlRepository();
+        public FormAddNewUser(User user)
         {
+            User = user;
             InitializeComponent();
+            lblAdminPersonalNumber.Text = user.PersonalNumber;
+            InitializeComponent();
+        }
+
+        private void btnAddNewUserConfirm_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -18,7 +18,7 @@ namespace ZaverecnyProjektIT4_Machacek
         {
             User = user;
             InitializeComponent();
-            lblLoggedAsMainPage.Text = user.Email;
+            lblLoggedAsMainPage.Text = user.PersonalNumber;
         }
 
     }

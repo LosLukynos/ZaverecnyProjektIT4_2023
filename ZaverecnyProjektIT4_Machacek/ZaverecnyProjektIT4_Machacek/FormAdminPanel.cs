@@ -7,17 +7,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ZaverecnyProjektIT4_Machacek
 {
     public partial class FormAdminPanel : Form
     {
+        SqlRepository sqlRepository = new SqlRepository();
         public User User { get;  }
         public FormAdminPanel(User user)
         {
             User = user;
             InitializeComponent();
-            lblAdminLoggedAs.Text = user.Email;
+            lblAdminPersonalNumber.Text = user.PersonalNumber;
+        }
+
+        private void tsBtnAddNewUser_Click(object sender, EventArgs e)
+        {
+            int pn = int.Parse(lblAdminPersonalNumber.Text);
+            var user = sqlRepository.GetUser(pn);
+            new FormAddNewUser(user).Show(this);
+           
+            Hide();
         }
     }
 }

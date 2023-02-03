@@ -35,7 +35,9 @@
             this.tsBtnManageUsers = new System.Windows.Forms.ToolStripButton();
             this.tsBtnWorkedHours = new System.Windows.Forms.ToolStripButton();
             this.tsBtnNewContract = new System.Windows.Forms.ToolStripButton();
-            this.lblAdminLoggedAs = new System.Windows.Forms.Label();
+            this.lblAdminPersonalNumber = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +65,7 @@
             this.tsBtnAddNewUser.Name = "tsBtnAddNewUser";
             this.tsBtnAddNewUser.Size = new System.Drawing.Size(23, 22);
             this.tsBtnAddNewUser.Text = "Přidat uživatele";
+            this.tsBtnAddNewUser.Click += new System.EventHandler(this.tsBtnAddNewUser_Click);
             // 
             // tsBtnRemoveUser
             // 
@@ -100,22 +103,46 @@
             this.tsBtnNewContract.Size = new System.Drawing.Size(23, 22);
             this.tsBtnNewContract.Text = "Vytvořit novou zakázku";
             // 
-            // lblAdminLoggedAs
+            // lblAdminPersonalNumber
             // 
-            this.lblAdminLoggedAs.AutoSize = true;
-            this.lblAdminLoggedAs.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.lblAdminLoggedAs.Location = new System.Drawing.Point(650, 5);
-            this.lblAdminLoggedAs.Name = "lblAdminLoggedAs";
-            this.lblAdminLoggedAs.Size = new System.Drawing.Size(35, 13);
-            this.lblAdminLoggedAs.TabIndex = 3;
-            this.lblAdminLoggedAs.Text = "label1";
+            this.lblAdminPersonalNumber.AutoSize = true;
+            this.lblAdminPersonalNumber.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblAdminPersonalNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblAdminPersonalNumber.Location = new System.Drawing.Point(656, 5);
+            this.lblAdminPersonalNumber.Name = "lblAdminPersonalNumber";
+            this.lblAdminPersonalNumber.Size = new System.Drawing.Size(41, 13);
+            this.lblAdminPersonalNumber.TabIndex = 8;
+            this.lblAdminPersonalNumber.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(455, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Admin ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(512, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Přihlášen pod osbním číslem: ";
             // 
             // FormAdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblAdminLoggedAs);
+            this.Controls.Add(this.lblAdminPersonalNumber);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -136,6 +163,8 @@
         private System.Windows.Forms.ToolStripButton tsBtnManageUsers;
         private System.Windows.Forms.ToolStripButton tsBtnWorkedHours;
         private System.Windows.Forms.ToolStripButton tsBtnNewContract;
-        private System.Windows.Forms.Label lblAdminLoggedAs;
+        private System.Windows.Forms.Label lblAdminPersonalNumber;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

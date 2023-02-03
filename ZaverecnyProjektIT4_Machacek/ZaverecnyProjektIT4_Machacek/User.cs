@@ -18,7 +18,7 @@ namespace ZaverecnyProjektIT4_Machacek
 
         public int ID { get; set; }
         public int RoleID { get; }
-        public string PersonalNumber { get; set; }
+        public string PersonalNumber { get; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Password { get;}
@@ -27,11 +27,12 @@ namespace ZaverecnyProjektIT4_Machacek
         public int PhoneNumber { get; set; }
 
 
-        public User(string email, string password, int roleID) 
+        public User(string email, string password, int roleID, int personalNumber) 
         {
             Email = email;
             Password = password;
             RoleID = roleID;
+            PersonalNumber = personalNumber.ToString();
         }
 
 
