@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.IO.Pipes;
 using Microsoft.SqlServer.Server;
 using System.Security.Cryptography.X509Certificates;
+using System.Windows.Forms;
 
 namespace ZaverecnyProjektIT4_Machacek
 {
@@ -18,11 +19,11 @@ namespace ZaverecnyProjektIT4_Machacek
 
         public void CreateNewUser(int role, string firstName, string lastName, string password, DateTime birthDate, string email, string phone)
         {
-            
-            using(SqlConnection connection = new SqlConnection(connectionString))
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using(SqlCommand command = new SqlCommand())
+                using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
                     command.CommandText = @"INSERT INTO [User] (RoleID, Name, LastName, PasswordHash, BirthDate, Email, Phone) VALUES (@roleID, @firstName, @lastName, @password, @birthDate, @email, @phone)";
@@ -44,27 +45,49 @@ namespace ZaverecnyProjektIT4_Machacek
         public User GetUser(string email)
         {
             User user = null;
-            using(SqlConnection connection = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using(SqlCommand command = connection.CreateCommand())
+                using (SqlCommand command = connection.CreateCommand())
                 {
+
                     command.Connection = connection;
                     command.CommandText = @"SELECT * FROM [User] WHERE Email=@email";
                     command.Parameters.AddWithValue("email", email);
 
+
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        if(reader.Read())
+                        if (reader.Read())
                         {
-                            user = new User(reader["Email"].ToString(), reader["PasswordHash"].ToString());
+                            user = new User(reader["Email"].ToString(), reader["PasswordHash"].ToString(), Convert.ToInt32(reader["RoleID"]));
                         }
                     }
                 }
                 connection.Close();
             }
             return user;
-        } 
+        }
+        public int GetUserRoleID(string email)
+        {
+            int userRoleID;
+            
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = @"SELECT RoleID FROM [User] WHERE Email=@email";
+                    command.Parameters.AddWithValue("email", email);
+                    
+                    userRoleID = (int)command.ExecuteScalar();
+                }
+            }
 
+            return userRoleID;
+        }
     }
+
 }
+

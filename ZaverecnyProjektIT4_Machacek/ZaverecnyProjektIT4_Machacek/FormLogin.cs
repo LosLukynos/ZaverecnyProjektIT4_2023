@@ -25,11 +25,28 @@ namespace ZaverecnyProjektIT4_Machacek
             string email = txtEmailLogin.Text;
             string password = txtPasswordLogin.Text;
             var user = sqlRepository.GetUser(email);
-            if(user != null)
+            int userRoleID = sqlRepository.GetUserRoleID(email);
+            if (user != null)
             {
                 if (user.VerifyPassword(password))
                 {
-                    MessageBox.Show("Vše v pořádku!");
+                    
+                switch (userRoleID) //Ověření, kterou roli má uživatel a podle toho se otevře jemu příslušná stránka
+                {
+                    case 3:
+                        MessageBox.Show("Ještě nemáte přidělenou žádnou roli. Nemůžete se tedy přihlásit. Pro přidělení role kontaktujte správce.");
+                        break;
+
+                    case 1:
+                        new FormAdminPanel(user).Show(this);
+                        Hide();
+                        break;
+                    case 2:
+                        new FormMainPage(user).Show(this);
+                        Hide();
+                        break;
+                }
+
                 }
                 else
                 {
@@ -54,7 +71,7 @@ namespace ZaverecnyProjektIT4_Machacek
 
             sqlRepository.CreateNewUser(roleID, firstName, lastName, password, birthDate, email, phone);
 
-            MessageBox.Show("Ahoj");
+            MessageBox.Show("Přidáno");    Přidání prvního Usera jako Admina, ručně, řešeno přes tlačítko "přihlásit"
             */
         }
     }

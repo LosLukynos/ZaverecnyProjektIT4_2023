@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,10 +12,12 @@ namespace ZaverecnyProjektIT4_Machacek
 {
     public class User
     {
+        SqlRepository sqlRepository = new SqlRepository();
         
 
 
         public int ID { get; set; }
+        public int RoleID { get; }
         public string PersonalNumber { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
@@ -24,10 +27,11 @@ namespace ZaverecnyProjektIT4_Machacek
         public int PhoneNumber { get; set; }
 
 
-        public User(string email, string password) 
+        public User(string email, string password, int roleID) 
         {
             Email = email;
             Password = password;
+            RoleID = roleID;
         }
 
 

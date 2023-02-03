@@ -34,7 +34,7 @@
             // lblLoggedAsMainPage
             // 
             this.lblLoggedAsMainPage.AutoSize = true;
-            this.lblLoggedAsMainPage.Location = new System.Drawing.Point(352, 122);
+            this.lblLoggedAsMainPage.Location = new System.Drawing.Point(753, 9);
             this.lblLoggedAsMainPage.Name = "lblLoggedAsMainPage";
             this.lblLoggedAsMainPage.Size = new System.Drawing.Size(35, 13);
             this.lblLoggedAsMainPage.TabIndex = 0;

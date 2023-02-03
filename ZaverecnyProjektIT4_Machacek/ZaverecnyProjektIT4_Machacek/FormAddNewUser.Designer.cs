@@ -1,0 +1,140 @@
+﻿namespace ZaverecnyProjektIT4_Machacek
+{
+    partial class FormAddNewUser
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddNewUser));
+            this.lblAdminLoggedAs = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsBtnAddNewUser = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnRemoveUser = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnManageUsers = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnWorkedHours = new System.Windows.Forms.ToolStripButton();
+            this.tsBtnNewContract = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // lblAdminLoggedAs
+            // 
+            this.lblAdminLoggedAs.AutoSize = true;
+            this.lblAdminLoggedAs.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblAdminLoggedAs.Location = new System.Drawing.Point(650, 5);
+            this.lblAdminLoggedAs.Name = "lblAdminLoggedAs";
+            this.lblAdminLoggedAs.Size = new System.Drawing.Size(35, 13);
+            this.lblAdminLoggedAs.TabIndex = 5;
+            this.lblAdminLoggedAs.Text = "label1";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsBtnAddNewUser,
+            this.tsBtnRemoveUser,
+            this.tsBtnManageUsers,
+            this.tsBtnWorkedHours,
+            this.tsBtnNewContract});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.TabIndex = 4;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsBtnAddNewUser
+            // 
+            this.tsBtnAddNewUser.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnAddNewUser.Enabled = false;
+            this.tsBtnAddNewUser.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnAddNewUser.Image")));
+            this.tsBtnAddNewUser.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnAddNewUser.Name = "tsBtnAddNewUser";
+            this.tsBtnAddNewUser.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnAddNewUser.Text = "Přidat uživatele";
+            // 
+            // tsBtnRemoveUser
+            // 
+            this.tsBtnRemoveUser.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnRemoveUser.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnRemoveUser.Image")));
+            this.tsBtnRemoveUser.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnRemoveUser.Name = "tsBtnRemoveUser";
+            this.tsBtnRemoveUser.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnRemoveUser.Text = "Odebrat uživatele";
+            // 
+            // tsBtnManageUsers
+            // 
+            this.tsBtnManageUsers.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnManageUsers.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnManageUsers.Image")));
+            this.tsBtnManageUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnManageUsers.Name = "tsBtnManageUsers";
+            this.tsBtnManageUsers.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnManageUsers.Text = "Spravovat uživatele";
+            // 
+            // tsBtnWorkedHours
+            // 
+            this.tsBtnWorkedHours.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnWorkedHours.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnWorkedHours.Image")));
+            this.tsBtnWorkedHours.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnWorkedHours.Name = "tsBtnWorkedHours";
+            this.tsBtnWorkedHours.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnWorkedHours.Text = "Odpracované hodiny uživatelů";
+            // 
+            // tsBtnNewContract
+            // 
+            this.tsBtnNewContract.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnNewContract.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnNewContract.Image")));
+            this.tsBtnNewContract.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnNewContract.Name = "tsBtnNewContract";
+            this.tsBtnNewContract.Size = new System.Drawing.Size(23, 22);
+            this.tsBtnNewContract.Text = "Vytvořit novou zakázku";
+            // 
+            // FormAddNewUser
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblAdminLoggedAs);
+            this.Controls.Add(this.toolStrip1);
+            this.Name = "FormAddNewUser";
+            this.Text = "Přidání nového uživatele";
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblAdminLoggedAs;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsBtnAddNewUser;
+        private System.Windows.Forms.ToolStripButton tsBtnRemoveUser;
+        private System.Windows.Forms.ToolStripButton tsBtnManageUsers;
+        private System.Windows.Forms.ToolStripButton tsBtnWorkedHours;
+        private System.Windows.Forms.ToolStripButton tsBtnNewContract;
+    }
+}

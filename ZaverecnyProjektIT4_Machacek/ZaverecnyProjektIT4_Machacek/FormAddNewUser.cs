@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ZaverecnyProjektIT4_Machacek
 {
-    public partial class FormMainPage : Form
+    public partial class FormAddNewUser : Form
     {
-        public User User { get; }
-        
-        public FormMainPage(User user)
+        public FormAddNewUser()
         {
-            User = user;
             InitializeComponent();
-            lblLoggedAsMainPage.Text = user.Email;
         }
-
     }
 }
