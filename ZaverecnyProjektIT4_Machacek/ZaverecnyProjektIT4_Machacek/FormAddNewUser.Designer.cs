@@ -55,6 +55,7 @@
             this.comboBoxRoleNewUser = new System.Windows.Forms.ComboBox();
             this.bntExitProgramNewUser = new System.Windows.Forms.Button();
             this.btnAddNewUserConfirm = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -274,6 +275,7 @@
             this.comboBoxRoleNewUser.Name = "comboBoxRoleNewUser";
             this.comboBoxRoleNewUser.Size = new System.Drawing.Size(122, 21);
             this.comboBoxRoleNewUser.TabIndex = 22;
+            this.comboBoxRoleNewUser.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoleNewUser_SelectedIndexChanged);
             // 
             // bntExitProgramNewUser
             // 
@@ -296,11 +298,23 @@
             this.btnAddNewUserConfirm.UseVisualStyleBackColor = true;
             this.btnAddNewUserConfirm.Click += new System.EventHandler(this.btnAddNewUserConfirm_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(249, 42);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(524, 36);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Pokud zvolíte nepřiřazenou roli, uživatel s nepřiřazenou\r\nrolí se nebude moci při" +
+    "hlásit, dokud mu role nebude jedná z dvou rolí přidělena.";
+            // 
             // FormAddNewUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.btnAddNewUserConfirm);
             this.Controls.Add(this.bntExitProgramNewUser);
             this.Controls.Add(this.comboBoxRoleNewUser);
@@ -325,6 +339,7 @@
             this.MaximizeBox = false;
             this.Name = "FormAddNewUser";
             this.Text = "Admin panel |Přidání nového uživatele";
+            this.Load += new System.EventHandler(this.FormAddNewUser_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -360,5 +375,6 @@
         private System.Windows.Forms.ComboBox comboBoxRoleNewUser;
         private System.Windows.Forms.Button bntExitProgramNewUser;
         private System.Windows.Forms.Button btnAddNewUserConfirm;
+        private System.Windows.Forms.Label label10;
     }
 }

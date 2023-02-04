@@ -107,6 +107,31 @@ namespace ZaverecnyProjektIT4_Machacek
 
             return userRoleID;
         }
+
+        
+        public List<Tuple<int, string>> GetRoleNameAndID() //Slouží k získání názvu a ID role pro zobrazení v comboboxu při vytváření uživatele a přiřazení role
+        {                                                  //Pomohl Google, takže teď už trošku znám Tuple :D
+            List<Tuple<int, string>> roleList = new List<Tuple<int, string>>();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = @"SELECT * FROM Role";
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int roleID = reader.GetInt32(0);
+                            string roleName = reader.GetString(1);
+                            roleList.Add(new Tuple<int, string>(roleID, roleName));
+                        }
+                    }
+                }
+            }
+            return roleList;
+        }
     }
 
 }
