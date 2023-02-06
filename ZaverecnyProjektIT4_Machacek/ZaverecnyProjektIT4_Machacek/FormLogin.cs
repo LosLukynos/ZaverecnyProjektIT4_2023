@@ -13,11 +13,11 @@ namespace ZaverecnyProjektIT4_Machacek
     public partial class FormLogin : Form
     {
         SqlRepository sqlRepository = new SqlRepository();
+        User userClass = new User();
         public FormLogin()
         {
+
             InitializeComponent();
-
-
         }
 
         private void btnConfirmLogin_Click(object sender, EventArgs e)
@@ -30,22 +30,22 @@ namespace ZaverecnyProjektIT4_Machacek
             {
                 if (user.VerifyPassword(password))
                 {
-                    
-                switch (userRoleID) //Ověření, kterou roli má uživatel a podle toho se otevře jemu příslušná stránka
-                {
-                    case 3:
-                        MessageBox.Show("Ještě nemáte přidělenou žádnou roli. Nemůžete se tedy přihlásit. Pro přidělení role kontaktujte správce.");
-                        break;
 
-                    case 1:
-                        new FormAdminPanel(user).Show(this);
-                        Hide();
-                        break;
-                    case 2:
-                        new FormMainPage(user).Show(this);
-                        Hide();
-                        break;
-                }
+                    switch (userRoleID) //Ověření, kterou roli má uživatel a podle toho se otevře jemu příslušná stránka
+                    {
+                        case 3:
+                            MessageBox.Show("Ještě nemáte přidělenou žádnou roli. Nemůžete se tedy přihlásit. Pro přidělení role kontaktujte správce.");
+                            break;
+
+                        case 1:
+                            new FormAdminPanel(user).Show(this);
+                            Hide();
+                            break;
+                        case 2:
+                            new FormMainPage(user).Show(this);
+                            Hide();
+                            break;
+                    }
 
                 }
                 else
@@ -61,18 +61,7 @@ namespace ZaverecnyProjektIT4_Machacek
 
 
 
-            /*int roleID = 1;
-            string firstName = "Admin";
-            string lastName = "Admin";
-            string password = "Admin";
-            DateTime birthDate = DateTime.Today;
-            string email = "emailAdmin";
-            string phone = "658958758";
 
-            sqlRepository.CreateNewUser(roleID, firstName, lastName, password, birthDate, email, phone);
-
-            MessageBox.Show("Přidáno");    Přidání prvního Usera jako Admina, ručně, řešeno přes tlačítko "přihlásit"
-            */
         }
     }
 }

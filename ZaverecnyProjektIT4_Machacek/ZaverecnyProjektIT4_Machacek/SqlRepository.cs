@@ -108,7 +108,7 @@ namespace ZaverecnyProjektIT4_Machacek
             return userRoleID;
         }
 
-        
+
         public List<Tuple<int, string>> GetRoleNameAndID() //Slouží k získání názvu a ID role pro zobrazení v comboboxu při vytváření uživatele a přiřazení role
         {                                                  //Pomohl Google, takže teď už trošku znám Tuple :D
             List<Tuple<int, string>> roleList = new List<Tuple<int, string>>();
@@ -132,7 +132,8 @@ namespace ZaverecnyProjektIT4_Machacek
             }
             return roleList;
         }
-    }
 
+
+    }
 }
 

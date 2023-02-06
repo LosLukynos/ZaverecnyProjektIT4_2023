@@ -8,6 +8,7 @@ namespace ZaverecnyProjektIT4_Machacek
 {
     internal static class Program
     {
+        
         /// <summary>
         /// Hlavní vstupní bod aplikace.
         /// </summary>

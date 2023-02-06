@@ -45,7 +45,10 @@ namespace ZaverecnyProjektIT4_Machacek
             PasswordHash = passwordHash;
         }
 
+        public User()
+        {
 
+        }
 
         public bool VerifyPassword(string password)
         {
