@@ -132,6 +132,31 @@ namespace ZaverecnyProjektIT4_Machacek
             }
             return roleList;
         }
+
+            public string GetHasedPasswordFromDatabase(string pn)
+            {
+                byte[] hashedPasswordFromDB = null;
+
+                using(SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = connection.CreateCommand())
+                    {
+                        command.Connection = connection;
+                        command.CommandText = @"SELECT PasswordHash FROM [User] WHERE PersonalNumber=@pn";
+                        command.Parameters.AddWithValue("PersonalNumber", pn);
+
+                       object result = command.ExecuteScalar();
+
+                       if(result != null)
+                        {
+                            hashedPasswordFromDB = (byte[])result;
+                        }
+
+                    }
+                }
+                return Encoding.UTF8.GetString(hashedPasswordFromDB); //Pomohl google, jsem ztracen trošku zde :D
+            }
     }
 
 }
