@@ -65,5 +65,22 @@ namespace ZaverecnyProjektIT4_Machacek
             return Convert.ToBase64String(PasswordHash); 
             //vrátí hash hesla jako řetězec, takže půjde uložit do proměnné
         }
+
+
+        static bool CompareHashes(byte[] storedPasswordHash, byte[] enteredPasswordHash)
+        {
+            if (storedPasswordHash.Length != enteredPasswordHash.Length)
+            {
+                return false;
+            }
+            for (int i = 0; i < storedPasswordHash.Length; i++)
+            {
+                if (storedPasswordHash[i] != enteredPasswordHash[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

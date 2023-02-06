@@ -24,11 +24,13 @@ namespace ZaverecnyProjektIT4_Machacek
         {
             int pn = int.Parse(txtPersonalNumberLogin.Text);
             string password = txtPasswordLogin.Text;
+            byte[] enteredPasswordHash = userClass.GetPasswordHash(password);
+            byte[] storedPasswordHash = sqlRepository.GetHasedPasswordFromDatabase(password);
             var user = sqlRepository.GetUser(pn);
             int userRoleID = sqlRepository.GetUserRoleID(pn);
             if (user != null)
             {
-                if (user.VerifyPassword(password))
+                if (CompareHashes(storedPasswordHash, enteredPasswordHash))
                 {
 
                     switch (userRoleID) //Ověření, kterou roli má uživatel a podle toho se otevře jemu příslušná stránka
