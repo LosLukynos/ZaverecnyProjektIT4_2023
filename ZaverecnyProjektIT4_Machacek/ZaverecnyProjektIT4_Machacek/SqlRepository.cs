@@ -15,7 +15,7 @@ namespace ZaverecnyProjektIT4_Machacek
     {
         System.Random random = new System.Random(); //K vytvoření random čísla
 
-        private string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SpravaFirmyMachacekDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        private string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SpravaFirmyMachacek_DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
 
         public void CreateNewUser(int role, string firstName, string lastName, string password, DateTime birthDate, string email, string phone)

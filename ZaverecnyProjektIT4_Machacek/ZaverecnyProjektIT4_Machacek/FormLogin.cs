@@ -22,7 +22,7 @@ namespace ZaverecnyProjektIT4_Machacek
 
         private void btnConfirmLogin_Click(object sender, EventArgs e)
         {
-            int pn = int.Parse(txtEmailLogin.Text);
+            int pn = int.Parse(txtPersonalNumberLogin.Text);
             string password = txtPasswordLogin.Text;
             var user = sqlRepository.GetUser(pn);
             int userRoleID = sqlRepository.GetUserRoleID(pn);
