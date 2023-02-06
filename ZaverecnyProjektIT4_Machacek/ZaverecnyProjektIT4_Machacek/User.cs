@@ -62,7 +62,8 @@ namespace ZaverecnyProjektIT4_Machacek
                 PasswordSalt = hmac.Key;
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             }
-            return Convert.ToBase64String(PasswordHash); //vrátí hash hesla jako řetězec, takže půjde uložit do proměnné
+            return Convert.ToBase64String(PasswordHash); 
+            //vrátí hash hesla jako řetězec, takže půjde uložit do proměnné
         }
     }
 }
