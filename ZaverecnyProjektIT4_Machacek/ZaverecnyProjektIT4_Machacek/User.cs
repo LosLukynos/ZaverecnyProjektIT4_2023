@@ -19,68 +19,70 @@ namespace ZaverecnyProjektIT4_Machacek
 
         public int ID { get; set; }
         public int RoleID { get; }
-        public string PersonalNumber { get; }
+        public int PersonalNumber { get; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Password { get; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
+        public byte[] PasswordHash { get; internal set; }
+        public byte[] PasswordSalt { get; internal set; }
         public DateTime BirthDate { get; set; }
         public string Email { get; set; }
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
 
-        public User(string email, string password, int roleID, int personalNumber)
+        public User(int roleID, string firstName, string lastName, string password, DateTime birthDate, string email, string phone)
         {
-            Email = email;
-            Password = password;
             RoleID = roleID;
-            PersonalNumber = personalNumber.ToString();
+            Email = email;
+            CreatePasswordHash(password);
+            BirthDate = birthDate;
+            PhoneNumber = phone;
+            Name = firstName;
+            LastName = lastName;
+
         }
 
-        public User(string personalNumber, byte[] passwordSalt, byte[] passwordHash)
+        public User(int personalNumber, byte[] passwordSalt, byte[] passwordHash, int roleID, DateTime birthDate, string email, string phone, string firstName, string lastName)
         {
             PersonalNumber = personalNumber;
             PasswordSalt = passwordSalt;
             PasswordHash = passwordHash;
+            RoleID = roleID;
+            BirthDate = birthDate;
+            Email = email;
+            PhoneNumber = phone;
+            Name = firstName;
+            LastName = lastName;
         }
 
-        public User()
+        public User(int roleID, string email,byte[] passwordSalt, byte[] passwordHash, int personalNumber)
+        {
+            RoleID = roleID;
+            Email = email;
+            PasswordSalt = passwordSalt;
+            PasswordHash = passwordHash;
+            PersonalNumber = personalNumber;
+        }
+
+        public bool VerifyPassword(string text)
         {
 
+            byte[] hash;
+            using (var hmac = new HMACSHA512(PasswordSalt))
+            {
+                hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(text));
+            }
+            return hash.SequenceEqual(PasswordHash);
         }
 
-        public bool VerifyPassword(string password)
-        {
-            return Password == password;
-        }
-
-        public string GetPasswordHash(string password)
+        private void CreatePasswordHash(string password)
         {
             using (var hmac = new HMACSHA512())
             {
                 PasswordSalt = hmac.Key;
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             }
-            return Convert.ToBase64String(PasswordHash); 
-            //vrátí hash hesla jako řetězec, takže půjde uložit do proměnné
-        }
 
-
-        static bool CompareHashes(byte[] storedPasswordHash, byte[] enteredPasswordHash)
-        {
-            if (storedPasswordHash.Length != enteredPasswordHash.Length)
-            {
-                return false;
-            }
-            for (int i = 0; i < storedPasswordHash.Length; i++)
-            {
-                if (storedPasswordHash[i] != enteredPasswordHash[i])
-                {
-                    return false;
-                }
-            }
-            return true;
         }
     }
 }

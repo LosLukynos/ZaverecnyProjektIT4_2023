@@ -12,17 +12,14 @@ namespace ZaverecnyProjektIT4_Machacek
 {
     public partial class FormAddNewUser : Form
     {
-        public User User { get; }
+        private User user;
 
         SqlRepository sqlRepository = new SqlRepository();
         public FormAddNewUser(User user)
         {
-            User = user;
+
             InitializeComponent();
-            lblAdminPersonalNumber.Text = user.PersonalNumber;
-
-
-
+            lblAdminPersonalNumber.Text = user.PersonalNumber.ToString();
         }
         private void FormAddNewUser_Load(object sender, EventArgs e)
         {
@@ -32,23 +29,23 @@ namespace ZaverecnyProjektIT4_Machacek
             roleList = sqlRepository.GetRoleNameAndID();
             comboBoxRoleNewUser.DataSource = roleList;
             comboBoxRoleNewUser.DisplayMember = "Item2";
-            comboBoxRoleNewUser.ValueMember =  "Item1";
+            comboBoxRoleNewUser.ValueMember = "Item1";
         }
 
         private void btnAddNewUserConfirm_Click(object sender, EventArgs e)
         {
-            
+
             string firstName = txtFirstNameNewUser.Text;
             string lastName = txtLastNameNewUser.Text;
             string phoneNumber = txtPhoneNumberNewUser.Text;
             string email = txtEmailNewUser.Text;
             string password = txtPasswordNewUser.Text;
-            string hashedPassword = User.GetPasswordHash(password);
             DateTime birthDate = dateTimePickerBirthDateNewUser.Value.Date;
             int role = Convert.ToInt32(comboBoxRoleNewUser.SelectedValue);
             try
             {
-                sqlRepository.CreateNewUser(role, firstName, lastName, hashedPassword, birthDate, email, phoneNumber);
+                user = new User(role, firstName, lastName, password, birthDate, email, phoneNumber);
+                sqlRepository.CreateNewUser(user);
             }
             catch
             {
@@ -61,7 +58,7 @@ namespace ZaverecnyProjektIT4_Machacek
 
         private void comboBoxRoleNewUser_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 

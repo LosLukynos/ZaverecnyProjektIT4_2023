@@ -19,7 +19,7 @@ namespace ZaverecnyProjektIT4_Machacek
         {
             User = user;
             InitializeComponent();
-            lblAdminPersonalNumber.Text = user.PersonalNumber;
+            lblAdminPersonalNumber.Text = user.PersonalNumber.ToString();
         }
 
         private void tsBtnAddNewUser_Click(object sender, EventArgs e)

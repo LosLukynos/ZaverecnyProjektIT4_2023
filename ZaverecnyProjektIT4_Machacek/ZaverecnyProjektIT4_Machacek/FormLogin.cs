@@ -12,11 +12,10 @@ namespace ZaverecnyProjektIT4_Machacek
 {
     public partial class FormLogin : Form
     {
-        SqlRepository sqlRepository = new SqlRepository();
-        User userClass = new User();
+        SqlRepository sqlRepository;
         public FormLogin()
         {
-
+            sqlRepository = new SqlRepository();
             InitializeComponent();
         }
 
@@ -24,13 +23,11 @@ namespace ZaverecnyProjektIT4_Machacek
         {
             int pn = int.Parse(txtPersonalNumberLogin.Text);
             string password = txtPasswordLogin.Text;
-            byte[] enteredPasswordHash = userClass.GetPasswordHash(password);
-            byte[] storedPasswordHash = sqlRepository.GetHasedPasswordFromDatabase(password);
             var user = sqlRepository.GetUser(pn);
             int userRoleID = sqlRepository.GetUserRoleID(pn);
             if (user != null)
             {
-                if (CompareHashes(storedPasswordHash, enteredPasswordHash))
+                if (user.VerifyPassword(password))
                 {
 
                     switch (userRoleID) //Ověření, kterou roli má uživatel a podle toho se otevře jemu příslušná stránka

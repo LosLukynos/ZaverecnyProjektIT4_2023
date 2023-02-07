@@ -17,8 +17,7 @@ namespace ZaverecnyProjektIT4_Machacek
 
         private string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SpravaFirmyMachacek_DB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-
-        public void CreateNewUser(int role, string firstName, string lastName, string password, DateTime birthDate, string email, string phone)
+        public void CreateNewUser(User user)
         {
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -30,7 +29,7 @@ namespace ZaverecnyProjektIT4_Machacek
                     command.Connection = connection;
                     command.CommandText = @"SELECT COUNT(*) FROM [User] WHERE PersonalNumber=@personalNumber";
 
-                    command.Parameters.AddWithValue("personalNumber", personalNumber);
+                    command.Parameters.AddWithValue("personalNumber",personalNumber);
                     int count = (int)command.ExecuteScalar();
                     if (count > 0) //Pokud už se číslo vyskutuje v databázi, tak bude probíhat cyklus while, dokud se nevygeneruje číslo, ktetré ještě není v databázi
                     {
@@ -38,19 +37,20 @@ namespace ZaverecnyProjektIT4_Machacek
                         {
                             personalNumber = random.Next(100000, 1000000);
                         }
-                        while (count > 0); //Dokud budenáhodné číslo již existovat, bude stále tvořit nové číslo a až bude číslo jediněčné, uloží ho do tabulky
+                        while (count > 0); //Dokud bude náhodné číslo již existovat, bude stále tvořit nové číslo a až bude číslo jediněčné, uloží ho do tabulky
                     }
                     else if (count == 0) //Když vygenerované číslo ještě nebude v databázi, přidá se PersonalNuber do databáze společně s ostatníma datama a vytvoří se nový uživatel
                     {
                         command.Parameters.Clear(); //Zajistí, abych mohl použít personalNumber 2x
-                        command.CommandText = @"INSERT INTO [User] (RoleID, Name, LastName, PasswordHash, BirthDate, Email, Phone, PersonalNumber) VALUES (@roleID, @firstName, @lastName, @password, @birthDate, @email, @phone, @personalNumber)";
-                        command.Parameters.AddWithValue("roleID", role);
-                        command.Parameters.AddWithValue("firstName", firstName);
-                        command.Parameters.AddWithValue("lastName", lastName);
-                        command.Parameters.AddWithValue("password", password);
-                        command.Parameters.AddWithValue("birthDate", birthDate);
-                        command.Parameters.AddWithValue("email", email);
-                        command.Parameters.AddWithValue("phone", phone);
+                        command.CommandText = @"INSERT INTO [User] (RoleID, Name, LastName, PasswordHash, PasswordSalt, BirthDate, Email, Phone, PersonalNumber) VALUES (@roleID, @firstName, @lastName, @passwordHash, @passwordSalt, @birthDate, @email, @phone, @personalNumber)";
+                        command.Parameters.AddWithValue("roleID", user.RoleID);
+                        command.Parameters.AddWithValue("firstName", user.Name);
+                        command.Parameters.AddWithValue("lastName", user.LastName);
+                        command.Parameters.AddWithValue("passwordHash", user.PasswordHash);
+                        command.Parameters.AddWithValue("passwordSalt", user.PasswordSalt);
+                        command.Parameters.AddWithValue("birthDate", user.BirthDate);
+                        command.Parameters.AddWithValue("email", user.Email);
+                        command.Parameters.AddWithValue("phone", user.PhoneNumber);
                         command.Parameters.AddWithValue("personalNumber", personalNumber);
 
                         command.ExecuteNonQuery();
@@ -80,7 +80,7 @@ namespace ZaverecnyProjektIT4_Machacek
                     {
                         if (reader.Read())
                         {
-                            user = new User(reader["Email"].ToString(), reader["PasswordHash"].ToString(), Convert.ToInt32(reader["RoleID"]), Convert.ToInt32(reader["PersonalNumber"]));
+                            user = new User(Convert.ToInt32(reader["RoleID"]), reader["Email"].ToString(), (byte[])reader["PasswordSalt"], (byte[])reader["PasswordHash"], Convert.ToInt32(reader["PersonalNumber"]));
                         }
                     }
                 }
