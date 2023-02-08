@@ -40,7 +40,6 @@ namespace ZaverecnyProjektIT4_Machacek
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAdminPersonalNumber = new System.Windows.Forms.Label();
-            this.btnRemoveUserConfirm = new System.Windows.Forms.Button();
             this.bntExitProgramRemoveUser = new System.Windows.Forms.Button();
             this.lvFormRemoveUser = new System.Windows.Forms.ListView();
             this.colPersonalNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -66,7 +65,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(1067, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1067, 27);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -76,7 +75,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnBackToMainPage.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnBackToMainPage.Image")));
             this.tsBtnBackToMainPage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnBackToMainPage.Name = "tsBtnBackToMainPage";
-            this.tsBtnBackToMainPage.Size = new System.Drawing.Size(29, 28);
+            this.tsBtnBackToMainPage.Size = new System.Drawing.Size(29, 24);
             this.tsBtnBackToMainPage.Text = "toolStripButton1";
             this.tsBtnBackToMainPage.Click += new System.EventHandler(this.tsBtnBackToMainPage_Click);
             // 
@@ -162,17 +161,6 @@ namespace ZaverecnyProjektIT4_Machacek
             this.lblAdminPersonalNumber.TabIndex = 10;
             this.lblAdminPersonalNumber.Text = "label1";
             // 
-            // btnRemoveUserConfirm
-            // 
-            this.btnRemoveUserConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRemoveUserConfirm.Location = new System.Drawing.Point(888, 503);
-            this.btnRemoveUserConfirm.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRemoveUserConfirm.Name = "btnRemoveUserConfirm";
-            this.btnRemoveUserConfirm.Size = new System.Drawing.Size(163, 36);
-            this.btnRemoveUserConfirm.TabIndex = 28;
-            this.btnRemoveUserConfirm.Text = "Odebrat";
-            this.btnRemoveUserConfirm.UseVisualStyleBackColor = true;
-            // 
             // bntExitProgramRemoveUser
             // 
             this.bntExitProgramRemoveUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -201,6 +189,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.lvFormRemoveUser.TabIndex = 29;
             this.lvFormRemoveUser.UseCompatibleStateImageBehavior = false;
             this.lvFormRemoveUser.View = System.Windows.Forms.View.Details;
+            this.lvFormRemoveUser.SelectedIndexChanged += new System.EventHandler(this.lvFormRemoveUser_SelectedIndexChanged);
             // 
             // colPersonalNumber
             // 
@@ -238,7 +227,6 @@ namespace ZaverecnyProjektIT4_Machacek
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.lvFormRemoveUser);
-            this.Controls.Add(this.btnRemoveUserConfirm);
             this.Controls.Add(this.bntExitProgramRemoveUser);
             this.Controls.Add(this.lblAdminPersonalNumber);
             this.Controls.Add(this.label2);
@@ -268,7 +256,6 @@ namespace ZaverecnyProjektIT4_Machacek
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAdminPersonalNumber;
-        private System.Windows.Forms.Button btnRemoveUserConfirm;
         private System.Windows.Forms.Button bntExitProgramRemoveUser;
         private System.Windows.Forms.ListView lvFormRemoveUser;
         private System.Windows.Forms.ColumnHeader colPersonalNumber;

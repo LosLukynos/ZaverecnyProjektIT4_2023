@@ -37,7 +37,6 @@ namespace ZaverecnyProjektIT4_Machacek
             int pn = int.Parse(lblAdminPersonalNumber.Text);
             var user = sqlRepository.GetUser(pn);
             new FormAddNewUser(user).Show(this);
-
             Hide();
         }
 
@@ -58,6 +57,21 @@ namespace ZaverecnyProjektIT4_Machacek
 
                 lvFormRemoveUser.Items.Add(listViewItem);
             }
+        }
+
+        private void lvFormRemoveUser_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (lvFormRemoveUser.SelectedItems.Count > 0)
+            {
+                ListViewItem listViewItem = lvFormRemoveUser.SelectedItems[0];
+
+                int pn = int.Parse(listViewItem.SubItems[0].Text);
+                var user = sqlRepository.GetUser(pn);
+                new FormConfirmRemoveUser(user).Show(this);
+                
+            }
+            
         }
     }
 }

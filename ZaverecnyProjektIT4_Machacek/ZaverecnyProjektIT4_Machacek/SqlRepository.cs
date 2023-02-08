@@ -73,6 +73,22 @@ namespace ZaverecnyProjektIT4_Machacek
 
         }
 
+        public void RemoveUser(int pn)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = @"DELETE FROM [User] WHERE PersonalNumber=@personalNumber";
+                    command.Parameters.AddWithValue("personalNumber", pn);
+                    command.ExecuteScalar();
+                }
+                connection.Close();
+            }
+        }
+
         public User GetUser(int pn)
         {
             User user = null;
