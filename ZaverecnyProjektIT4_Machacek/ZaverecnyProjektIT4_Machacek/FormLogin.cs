@@ -56,11 +56,11 @@ namespace ZaverecnyProjektIT4_Machacek
             {
                 MessageBox.Show("Neznámý uživatel!");
             }
+        }
 
-
-
-
-
+        private void btnCancelLogin_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

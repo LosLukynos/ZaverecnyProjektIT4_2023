@@ -17,7 +17,6 @@ namespace ZaverecnyProjektIT4_Machacek
         SqlRepository sqlRepository = new SqlRepository();
         public FormAddNewUser(User user)
         {
-
             InitializeComponent();
             lblAdminPersonalNumber.Text = user.PersonalNumber.ToString();
         }
@@ -51,9 +50,6 @@ namespace ZaverecnyProjektIT4_Machacek
             {
                 MessageBox.Show("Nastal problém");
             }
-
-
-
         }
 
         private void comboBoxRoleNewUser_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,6 +57,29 @@ namespace ZaverecnyProjektIT4_Machacek
 
 
         }
+
+        private void bntExitProgramNewUser_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tsBtnBackToMainPage_Click(object sender, EventArgs e)
+        {
+            int pn = int.Parse(lblAdminPersonalNumber.Text);
+            var user = sqlRepository.GetUser(pn);
+            new FormAdminPanel(user).Show(this);
+            Hide();
+        }
+
+        private void tsBtnRemoveUser_Click(object sender, EventArgs e)
+        {
+            int pn = int.Parse(lblAdminPersonalNumber.Text);
+            var user = sqlRepository.GetUser(pn);
+            new FormRemoveUser(user).Show(this);
+
+            Hide();
+        }
+
 
     }
 }

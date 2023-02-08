@@ -30,5 +30,13 @@ namespace ZaverecnyProjektIT4_Machacek
            
             Hide();
         }
+
+        private void tsBtnRemoveUser_Click(object sender, EventArgs e)
+        {
+            int pn = int.Parse(lblAdminPersonalNumber.Text);
+            var user = sqlRepository.GetUser(pn);
+            new FormRemoveUser(user).Show(this);
+            Hide();
+        }
     }
 }

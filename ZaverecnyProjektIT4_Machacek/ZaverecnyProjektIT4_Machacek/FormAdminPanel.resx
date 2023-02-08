@@ -117,14 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tsBtnAddNewUser.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACt2SURBVHhe7d0HtG1Vfe/xQ5NqRUApFlAhWBCJMYmKIqio
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAACt2SURBVHhe7d0HtG1Vfe/xQ5NqRUApFlAhWBCJMYmKIqio
         sRBFIlaCELA8iaBg7CWKYHwx0ZeICWokShyRokajiKCCgIJSBAWCJQqIGJAOUl6+P++9cLn8772n7LVX
         +37H+Izn8BmYZ+195tllzTlnzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzM
         zMzMzMzMzMzMzMzMzMzMzMzMzMzMzMwG1trYGs/Cn+ONOBSH41ichB/iosWuWOxa/P/F8p+X/PdL/nfn
@@ -316,7 +313,7 @@
   <data name="tsBtnRemoveUser.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACmPSURBVHhe7d0HuGZVfe/xoQmIBUXBghUUxYKosYEtEEUM
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAACmPSURBVHhe7d0HuGZVfe/xoQmIBUXBghUUxYKosYEtEEUM
         McaCYkFUjDUmijW51ogoYkJy471iA7HFKIKaxMSCYEVBQUUFa6wggiIIAwL3fn+EIYP8Z+acM+9591p7
         f7/P83mSGJW133POetvaa60wMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMz
         MzMzMzMzMzMzMzMzMzMzMzMzMzMzM5txm2NHPBRPxgtxMN6OY/BZfAvfu8I5Vzgf/+8K+d9X/eur/n3f
@@ -500,7 +497,7 @@
   <data name="tsBtnManageUsers.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACh8SURBVHhe7d0HmCVVmbhxyTkqQYKAJFHJiItZEROCgWBC
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAACh8SURBVHhe7d0HmCVVmbhxyTkqQYKAJFHJiItZEROCgWBC
         DChiRFEXVFR0YRcVkBwVFAUUZRX5owIKyCImgoAgokjOmSGn/b/fzswysF/P3L59+95zTr3v8/yeZXGm
         u0715dTtW1WnnmbWQHNiRbwC78Wu+CaOxs/xB/wDV+KOae7Ff08T/zz938efiT8bf+dkxNeIrxVfM752
         fI/4XvE9zczMbAjNg/UQB+K9cRrigP0Iph/MhyW+5z9xKvbCexDbFttoZmZmE2g1xMH+CPwFozjQj1ds
@@ -679,7 +676,7 @@
   <data name="tsBtnWorkedHours.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAFdCSURBVHhe7Z0J2HXV+P9fpEEapGhWhkpRkpIGc0QDKmmS
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAFdCSURBVHhe7Z0J2HXV+P9fpEEapGhWhkpRkpIGc0QDKmmS
         KUMRmWdlTBqUSJmHRAhRhhJJGVISRaRBKiUNUpL4/f+fb29HT897P3s6e5+z19rfz3V9rou3Z+9z9t7r
         7L32Wve673nGGGOMMcYYY4wxxhizAIvgCrg2bopb4+74kjt8Lb7xDt+D77/Dj+BRd3jgHf/2Xhz97atw
         tI+d8Nm4Leoz1sJl8W5ojDHGmJZYGFfHzXFXfAN+CL+Bp+Fv8HK8Gf/fFP0/vAYvwDPwm/gpVIdCnYjn
@@ -1058,7 +1055,7 @@
   <data name="tsBtnNewContract.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAACzSSURBVHhe7d0HtLVleeZxegcriIgNC1bEgiKiKGKXuKLY
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAACzSSURBVHhe7d0HtLVleeZxegcriIgNC1bEgiKiKGKXuKLY
         osYoihodTTQGHSn2mqhYUdFYGEGWU5YFFKOjCCIREIjJKIPGhgVBKSJ8lMxc9/pg+QnX93HO2Xu/z3M/
         9/+/1m+NY1hy7332vc/Z5X3f9YiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI
         iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI
@@ -1253,4 +1250,7 @@
         gg==
 </value>
   </data>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

@@ -19,7 +19,8 @@ namespace ZaverecnyProjektIT4_Machacek
 
         public int ID { get; set; }
         public int RoleID { get; }
-        public int PersonalNumber { get; }
+        public string RoleName { get; set; }
+        public int PersonalNumber { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Password { get; }
@@ -29,7 +30,10 @@ namespace ZaverecnyProjektIT4_Machacek
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
 
+        public User()
+        {
 
+        }
         public User(int roleID, string firstName, string lastName, string password, DateTime birthDate, string email, string phone)
         {
             RoleID = roleID;
@@ -55,7 +59,7 @@ namespace ZaverecnyProjektIT4_Machacek
             LastName = lastName;
         }
 
-        public User(int roleID, string email,byte[] passwordSalt, byte[] passwordHash, int personalNumber)
+        public User(int roleID, string email, byte[] passwordSalt, byte[] passwordHash, int personalNumber)
         {
             RoleID = roleID;
             Email = email;

@@ -50,7 +50,7 @@
             // txtPersonalNumberLogin
             // 
             this.txtPersonalNumberLogin.Location = new System.Drawing.Point(141, 117);
-            this.txtPersonalNumberLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPersonalNumberLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtPersonalNumberLogin.Name = "txtPersonalNumberLogin";
             this.txtPersonalNumberLogin.Size = new System.Drawing.Size(228, 22);
             this.txtPersonalNumberLogin.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             this.txtPasswordLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtPasswordLogin.Location = new System.Drawing.Point(141, 183);
-            this.txtPasswordLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPasswordLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtPasswordLogin.Name = "txtPasswordLogin";
             this.txtPasswordLogin.PasswordChar = '*';
             this.txtPasswordLogin.Size = new System.Drawing.Size(228, 27);
@@ -78,7 +78,7 @@
             // btnConfirmLogin
             // 
             this.btnConfirmLogin.Location = new System.Drawing.Point(269, 294);
-            this.btnConfirmLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirmLogin.Name = "btnConfirmLogin";
             this.btnConfirmLogin.Size = new System.Drawing.Size(177, 43);
             this.btnConfirmLogin.TabIndex = 4;
@@ -89,12 +89,13 @@
             // btnCancelLogin
             // 
             this.btnCancelLogin.Location = new System.Drawing.Point(16, 295);
-            this.btnCancelLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelLogin.Name = "btnCancelLogin";
             this.btnCancelLogin.Size = new System.Drawing.Size(177, 43);
             this.btnCancelLogin.TabIndex = 5;
-            this.btnCancelLogin.Text = "Zpět";
+            this.btnCancelLogin.Text = "Ukončit";
             this.btnCancelLogin.UseVisualStyleBackColor = true;
+            this.btnCancelLogin.Click += new System.EventHandler(this.btnCancelLogin_Click);
             // 
             // label3
             // 
@@ -120,7 +121,7 @@
             this.Controls.Add(this.txtPersonalNumberLogin);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
