@@ -61,6 +61,8 @@ namespace ZaverecnyProjektIT4_Machacek
 
         private void lvFormRemoveUser_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
 
             if (lvFormRemoveUser.SelectedItems.Count > 0)
             {
@@ -70,6 +72,11 @@ namespace ZaverecnyProjektIT4_Machacek
                 var user = sqlRepository.GetUser(pn);
                 new FormConfirmRemoveUser(user).Show(this);
                 
+            }
+            }
+            catch
+            {
+                MessageBox.Show("Nastal problém při výběru uživatele.\nZkuste prosím zavřít toto okno a znovu načíst seznam uživatelů.");
             }
             
         }

@@ -124,22 +124,26 @@ namespace ZaverecnyProjektIT4_Machacek
         }
         public int GetUserRoleID(int pn)
         {
+       
             int userRoleID;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
                 using (SqlCommand command = connection.CreateCommand())
-                {
+                {   
                     command.Connection = connection;
                     command.CommandText = @"SELECT RoleID FROM [User] WHERE PersonalNumber=@pn";
                     command.Parameters.AddWithValue("pn", pn);
 
                     userRoleID = (int)command.ExecuteScalar();
+                    
                 }
             }
 
             return userRoleID;
+           
+           
         }
 
 

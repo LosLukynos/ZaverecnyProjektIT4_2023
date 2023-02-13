@@ -75,6 +75,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.btnCancelRemoveUser.TabIndex = 4;
             this.btnCancelRemoveUser.Text = "Zpět";
             this.btnCancelRemoveUser.UseVisualStyleBackColor = true;
+            this.btnCancelRemoveUser.Click += new System.EventHandler(this.btnCancelRemoveUser_Click);
             // 
             // FormConfirmRemoveUser
             // 
@@ -85,6 +86,8 @@ namespace ZaverecnyProjektIT4_Machacek
             this.Controls.Add(this.btnOKConfirmRemoveUser);
             this.Controls.Add(this.lblPersonalNumberConfirm);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FormConfirmRemoveUser";
             this.Text = "FormConfirmRemoveUser";
             this.ResumeLayout(false);

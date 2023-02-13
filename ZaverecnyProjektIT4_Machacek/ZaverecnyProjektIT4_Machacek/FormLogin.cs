@@ -21,40 +21,47 @@ namespace ZaverecnyProjektIT4_Machacek
 
         private void btnConfirmLogin_Click(object sender, EventArgs e)
         {
-            int pn = int.Parse(txtPersonalNumberLogin.Text);
-            string password = txtPasswordLogin.Text;
-            var user = sqlRepository.GetUser(pn);
-            int userRoleID = sqlRepository.GetUserRoleID(pn);
-            if (user != null)
+            try
             {
-                if (user.VerifyPassword(password))
+                int pn = int.Parse(txtPersonalNumberLogin.Text);
+                string password = txtPasswordLogin.Text;
+                var user = sqlRepository.GetUser(pn);
+                int userRoleID = sqlRepository.GetUserRoleID(pn);
+                if (user != null)
                 {
-
-                    switch (userRoleID) //Ověření, kterou roli má uživatel a podle toho se otevře jemu příslušná stránka
+                    if (user.VerifyPassword(password))
                     {
-                        case 3:
-                            MessageBox.Show("Ještě nemáte přidělenou žádnou roli. Nemůžete se tedy přihlásit. Pro přidělení role kontaktujte správce.");
-                            break;
 
-                        case 1:
-                            new FormAdminPanel(user).Show(this);
-                            Hide();
-                            break;
-                        case 2:
-                            new FormMainPage(user).Show(this);
-                            Hide();
-                            break;
+                        switch (userRoleID) //Ověření, kterou roli má uživatel a podle toho se otevře jemu příslušná stránka
+                        {
+                            case 3:
+                                MessageBox.Show("Ještě nemáte přidělenou žádnou roli. Nemůžete se tedy přihlásit. Pro přidělení role kontaktujte správce.");
+                                break;
+
+                            case 1:
+                                new FormAdminPanel(user).Show(this);
+                                Hide();
+                                break;
+                            case 2:
+                                new FormMainPage(user).Show(this);
+                                Hide();
+                                break;
+                        }
+
                     }
-
+                    else
+                    {
+                        MessageBox.Show("Špatné heslo!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Špatné heslo!");
+                    MessageBox.Show("Neznámý uživatel!");
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("Neznámý uživatel!");
+                MessageBox.Show("Musíte zadat všechny údaje!");
             }
         }
 
