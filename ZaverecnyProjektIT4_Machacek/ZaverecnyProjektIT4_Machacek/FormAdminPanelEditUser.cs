@@ -12,9 +12,15 @@ namespace ZaverecnyProjektIT4_Machacek
 {
     public partial class FormAdminPanelEditUser : Form
     {
-        public FormAdminPanelEditUser()
+        SqlRepository sqlRepository = new SqlRepository();
+        public User User { get; }
+        public FormAdminPanelEditUser(User user)
         {
+            List<User> users;
+            User = user;
             InitializeComponent();
+            lblAdminPersonalNumber.Text = user.PersonalNumber.ToString();
+            users = sqlRepository.GetUsers();
         }
     }
 }

@@ -65,7 +65,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(1067, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -75,7 +75,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnBackToMainPage.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnBackToMainPage.Image")));
             this.tsBtnBackToMainPage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnBackToMainPage.Name = "tsBtnBackToMainPage";
-            this.tsBtnBackToMainPage.Size = new System.Drawing.Size(29, 24);
+            this.tsBtnBackToMainPage.Size = new System.Drawing.Size(24, 24);
             this.tsBtnBackToMainPage.Text = "toolStripButton1";
             this.tsBtnBackToMainPage.Click += new System.EventHandler(this.tsBtnBackToMainPage_Click);
             // 
@@ -85,7 +85,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnAddNewUser.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnAddNewUser.Image")));
             this.tsBtnAddNewUser.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnAddNewUser.Name = "tsBtnAddNewUser";
-            this.tsBtnAddNewUser.Size = new System.Drawing.Size(29, 24);
+            this.tsBtnAddNewUser.Size = new System.Drawing.Size(24, 24);
             this.tsBtnAddNewUser.Text = "Přidat uživatele";
             this.tsBtnAddNewUser.Click += new System.EventHandler(this.tsBtnAddNewUser_Click);
             // 
@@ -96,7 +96,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnRemoveUser.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnRemoveUser.Image")));
             this.tsBtnRemoveUser.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnRemoveUser.Name = "tsBtnRemoveUser";
-            this.tsBtnRemoveUser.Size = new System.Drawing.Size(29, 24);
+            this.tsBtnRemoveUser.Size = new System.Drawing.Size(24, 24);
             this.tsBtnRemoveUser.Text = "Odebrat uživatele";
             // 
             // tsBtnManageUsers
@@ -105,8 +105,9 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnManageUsers.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnManageUsers.Image")));
             this.tsBtnManageUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnManageUsers.Name = "tsBtnManageUsers";
-            this.tsBtnManageUsers.Size = new System.Drawing.Size(29, 24);
+            this.tsBtnManageUsers.Size = new System.Drawing.Size(24, 24);
             this.tsBtnManageUsers.Text = "Spravovat uživatele";
+            this.tsBtnManageUsers.Click += new System.EventHandler(this.tsBtnManageUsers_Click);
             // 
             // tsBtnWorkedHours
             // 
@@ -114,7 +115,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnWorkedHours.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnWorkedHours.Image")));
             this.tsBtnWorkedHours.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnWorkedHours.Name = "tsBtnWorkedHours";
-            this.tsBtnWorkedHours.Size = new System.Drawing.Size(29, 24);
+            this.tsBtnWorkedHours.Size = new System.Drawing.Size(24, 24);
             this.tsBtnWorkedHours.Text = "Odpracované hodiny uživatelů";
             // 
             // tsBtnNewContract
@@ -123,17 +124,16 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnNewContract.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnNewContract.Image")));
             this.tsBtnNewContract.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnNewContract.Name = "tsBtnNewContract";
-            this.tsBtnNewContract.Size = new System.Drawing.Size(29, 24);
+            this.tsBtnNewContract.Size = new System.Drawing.Size(24, 24);
             this.tsBtnNewContract.Text = "Vytvořit novou zakázku";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(607, 6);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(455, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Admin ";
             // 
@@ -142,10 +142,9 @@ namespace ZaverecnyProjektIT4_Machacek
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(683, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(512, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 17);
+            this.label1.Size = new System.Drawing.Size(156, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "Přihlášen pod osobním číslem: ";
             // 
@@ -154,20 +153,18 @@ namespace ZaverecnyProjektIT4_Machacek
             this.lblAdminPersonalNumber.AutoSize = true;
             this.lblAdminPersonalNumber.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lblAdminPersonalNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblAdminPersonalNumber.Location = new System.Drawing.Point(875, 6);
-            this.lblAdminPersonalNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAdminPersonalNumber.Location = new System.Drawing.Point(656, 5);
             this.lblAdminPersonalNumber.Name = "lblAdminPersonalNumber";
-            this.lblAdminPersonalNumber.Size = new System.Drawing.Size(52, 17);
+            this.lblAdminPersonalNumber.Size = new System.Drawing.Size(41, 13);
             this.lblAdminPersonalNumber.TabIndex = 10;
             this.lblAdminPersonalNumber.Text = "label1";
             // 
             // bntExitProgramRemoveUser
             // 
             this.bntExitProgramRemoveUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bntExitProgramRemoveUser.Location = new System.Drawing.Point(13, 505);
-            this.bntExitProgramRemoveUser.Margin = new System.Windows.Forms.Padding(4);
+            this.bntExitProgramRemoveUser.Location = new System.Drawing.Point(10, 410);
             this.bntExitProgramRemoveUser.Name = "bntExitProgramRemoveUser";
-            this.bntExitProgramRemoveUser.Size = new System.Drawing.Size(163, 36);
+            this.bntExitProgramRemoveUser.Size = new System.Drawing.Size(122, 29);
             this.bntExitProgramRemoveUser.TabIndex = 27;
             this.bntExitProgramRemoveUser.Text = "Ukončit program";
             this.bntExitProgramRemoveUser.UseVisualStyleBackColor = true;
@@ -183,9 +180,10 @@ namespace ZaverecnyProjektIT4_Machacek
             this.colRole});
             this.lvFormRemoveUser.GridLines = true;
             this.lvFormRemoveUser.HideSelection = false;
-            this.lvFormRemoveUser.Location = new System.Drawing.Point(0, 30);
+            this.lvFormRemoveUser.Location = new System.Drawing.Point(0, 24);
+            this.lvFormRemoveUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lvFormRemoveUser.Name = "lvFormRemoveUser";
-            this.lvFormRemoveUser.Size = new System.Drawing.Size(1067, 466);
+            this.lvFormRemoveUser.Size = new System.Drawing.Size(801, 379);
             this.lvFormRemoveUser.TabIndex = 29;
             this.lvFormRemoveUser.UseCompatibleStateImageBehavior = false;
             this.lvFormRemoveUser.View = System.Windows.Forms.View.Details;
@@ -223,9 +221,9 @@ namespace ZaverecnyProjektIT4_Machacek
             // 
             // FormRemoveUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lvFormRemoveUser);
             this.Controls.Add(this.bntExitProgramRemoveUser);
             this.Controls.Add(this.lblAdminPersonalNumber);
@@ -233,6 +231,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "FormRemoveUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

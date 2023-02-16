@@ -37,7 +37,7 @@ namespace ZaverecnyProjektIT4_Machacek
 
 
                 this.Hide();
-                MessageBox.Show("Uživatel byl odstraněn.");
+                MessageBox.Show("Uživatel byl odstraněn. Změny se projeví po obnovení seznamu uživatelů.");
             }
             catch
             {

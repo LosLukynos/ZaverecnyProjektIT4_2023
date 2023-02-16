@@ -80,5 +80,13 @@ namespace ZaverecnyProjektIT4_Machacek
             }
             
         }
+
+        private void tsBtnManageUsers_Click(object sender, EventArgs e)
+        {
+            int pn = int.Parse(lblAdminPersonalNumber.Text);
+            var user = sqlRepository.GetUser(pn);
+            new FormAdminPanelEditUser(user).Show(this);
+            Hide();
+        }
     }
 }

@@ -44,8 +44,12 @@ namespace ZaverecnyProjektIT4_Machacek
             this.colEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colRole = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colBirthDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bntExitProgramRemoveUser = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblAdminPersonalNumber = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +67,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(1312, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1303, 27);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -73,7 +77,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnBackToMainPage.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnBackToMainPage.Image")));
             this.tsBtnBackToMainPage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnBackToMainPage.Name = "tsBtnBackToMainPage";
-            this.tsBtnBackToMainPage.Size = new System.Drawing.Size(29, 24);
+            this.tsBtnBackToMainPage.Size = new System.Drawing.Size(24, 24);
             this.tsBtnBackToMainPage.Text = "toolStripButton1";
             // 
             // tsBtnAddNewUser
@@ -82,26 +86,26 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnAddNewUser.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnAddNewUser.Image")));
             this.tsBtnAddNewUser.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnAddNewUser.Name = "tsBtnAddNewUser";
-            this.tsBtnAddNewUser.Size = new System.Drawing.Size(29, 24);
+            this.tsBtnAddNewUser.Size = new System.Drawing.Size(24, 24);
             this.tsBtnAddNewUser.Text = "Přidat uživatele";
             // 
             // tsBtnRemoveUser
             // 
             this.tsBtnRemoveUser.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsBtnRemoveUser.Enabled = false;
             this.tsBtnRemoveUser.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnRemoveUser.Image")));
             this.tsBtnRemoveUser.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnRemoveUser.Name = "tsBtnRemoveUser";
-            this.tsBtnRemoveUser.Size = new System.Drawing.Size(29, 24);
+            this.tsBtnRemoveUser.Size = new System.Drawing.Size(24, 24);
             this.tsBtnRemoveUser.Text = "Odebrat uživatele";
             // 
             // tsBtnManageUsers
             // 
             this.tsBtnManageUsers.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnManageUsers.Enabled = false;
             this.tsBtnManageUsers.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnManageUsers.Image")));
             this.tsBtnManageUsers.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnManageUsers.Name = "tsBtnManageUsers";
-            this.tsBtnManageUsers.Size = new System.Drawing.Size(29, 24);
+            this.tsBtnManageUsers.Size = new System.Drawing.Size(24, 24);
             this.tsBtnManageUsers.Text = "Spravovat uživatele";
             // 
             // tsBtnWorkedHours
@@ -110,7 +114,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnWorkedHours.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnWorkedHours.Image")));
             this.tsBtnWorkedHours.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnWorkedHours.Name = "tsBtnWorkedHours";
-            this.tsBtnWorkedHours.Size = new System.Drawing.Size(29, 24);
+            this.tsBtnWorkedHours.Size = new System.Drawing.Size(24, 24);
             this.tsBtnWorkedHours.Text = "Odpracované hodiny uživatelů";
             // 
             // tsBtnNewContract
@@ -119,7 +123,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnNewContract.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnNewContract.Image")));
             this.tsBtnNewContract.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnNewContract.Name = "tsBtnNewContract";
-            this.tsBtnNewContract.Size = new System.Drawing.Size(29, 24);
+            this.tsBtnNewContract.Size = new System.Drawing.Size(24, 24);
             this.tsBtnNewContract.Text = "Vytvořit novou zakázku";
             // 
             // lvFormRemoveUser
@@ -130,12 +134,14 @@ namespace ZaverecnyProjektIT4_Machacek
             this.colLastName,
             this.colEmail,
             this.colPhone,
-            this.colRole});
+            this.colRole,
+            this.colBirthDate});
             this.lvFormRemoveUser.GridLines = true;
             this.lvFormRemoveUser.HideSelection = false;
-            this.lvFormRemoveUser.Location = new System.Drawing.Point(0, 30);
+            this.lvFormRemoveUser.Location = new System.Drawing.Point(0, 29);
+            this.lvFormRemoveUser.Margin = new System.Windows.Forms.Padding(2);
             this.lvFormRemoveUser.Name = "lvFormRemoveUser";
-            this.lvFormRemoveUser.Size = new System.Drawing.Size(797, 466);
+            this.lvFormRemoveUser.Size = new System.Drawing.Size(918, 379);
             this.lvFormRemoveUser.TabIndex = 30;
             this.lvFormRemoveUser.UseCompatibleStateImageBehavior = false;
             this.lvFormRemoveUser.View = System.Windows.Forms.View.Details;
@@ -170,13 +176,17 @@ namespace ZaverecnyProjektIT4_Machacek
             this.colRole.Text = "Role";
             this.colRole.Width = 108;
             // 
+            // colBirthDate
+            // 
+            this.colBirthDate.Text = "Datum narození";
+            this.colBirthDate.Width = 120;
+            // 
             // bntExitProgramRemoveUser
             // 
             this.bntExitProgramRemoveUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bntExitProgramRemoveUser.Location = new System.Drawing.Point(13, 509);
-            this.bntExitProgramRemoveUser.Margin = new System.Windows.Forms.Padding(4);
+            this.bntExitProgramRemoveUser.Location = new System.Drawing.Point(10, 414);
             this.bntExitProgramRemoveUser.Name = "bntExitProgramRemoveUser";
-            this.bntExitProgramRemoveUser.Size = new System.Drawing.Size(163, 36);
+            this.bntExitProgramRemoveUser.Size = new System.Drawing.Size(122, 29);
             this.bntExitProgramRemoveUser.TabIndex = 31;
             this.bntExitProgramRemoveUser.Text = "Ukončit program";
             this.bntExitProgramRemoveUser.UseVisualStyleBackColor = true;
@@ -184,25 +194,62 @@ namespace ZaverecnyProjektIT4_Machacek
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(1136, 509);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(1169, 414);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 36);
+            this.button1.Size = new System.Drawing.Size(122, 29);
             this.button1.TabIndex = 32;
             this.button1.Text = "Potvrdit změny";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // lblAdminPersonalNumber
+            // 
+            this.lblAdminPersonalNumber.AutoSize = true;
+            this.lblAdminPersonalNumber.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.lblAdminPersonalNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblAdminPersonalNumber.Location = new System.Drawing.Point(1138, 5);
+            this.lblAdminPersonalNumber.Name = "lblAdminPersonalNumber";
+            this.lblAdminPersonalNumber.Size = new System.Drawing.Size(41, 13);
+            this.lblAdminPersonalNumber.TabIndex = 33;
+            this.lblAdminPersonalNumber.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(937, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Admin ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(994, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Přihlášen pod osobním číslem: ";
+            // 
             // FormAdminPanelEditUser
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 558);
+            this.ClientSize = new System.Drawing.Size(1303, 453);
+            this.Controls.Add(this.lblAdminPersonalNumber);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bntExitProgramRemoveUser);
             this.Controls.Add(this.lvFormRemoveUser);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "FormAdminPanelEditUser";
-            this.Text = "FormAdminPanelEditUser";
+            this.Text = "Admin panel |Editace uživatelů";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -228,5 +275,9 @@ namespace ZaverecnyProjektIT4_Machacek
         private System.Windows.Forms.ColumnHeader colRole;
         private System.Windows.Forms.Button bntExitProgramRemoveUser;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ColumnHeader colBirthDate;
+        private System.Windows.Forms.Label lblAdminPersonalNumber;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
