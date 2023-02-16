@@ -63,7 +63,7 @@ namespace ZaverecnyProjektIT4_Machacek
                     }
                     catch
                     {
-                        MessageBox.Show("Nepodařilo se přidat nového užviatele.");
+                        MessageBox.Show("Přididání nového uživatele se nezdařilo!");
                     }
 
 
@@ -140,6 +140,7 @@ namespace ZaverecnyProjektIT4_Machacek
                     
                 }
             }
+
 
             return userRoleID;
            
