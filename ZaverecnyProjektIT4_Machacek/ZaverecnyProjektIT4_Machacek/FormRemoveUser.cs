@@ -48,11 +48,11 @@ namespace ZaverecnyProjektIT4_Machacek
                 ListViewItem listViewItem = new ListViewItem(new string[]
                 {
                     user.PersonalNumber.ToString(),
+                    user.RoleName,
                     user.Name,
                     user.LastName,
                     user.Email,
-                    user.PhoneNumber,
-                    user.RoleName
+                    user.PhoneNumber
                 });
 
                 lvFormRemoveUser.Items.Add(listViewItem);

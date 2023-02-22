@@ -8,6 +8,7 @@ using System.IO.Pipes;
 using Microsoft.SqlServer.Server;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace ZaverecnyProjektIT4_Machacek
 {
@@ -25,8 +26,8 @@ namespace ZaverecnyProjektIT4_Machacek
                 connection.Open();
                 using (SqlCommand command = new SqlCommand())
                 {
-                    try
-                    {
+                    //try
+                    //{
 
                         int personalNumber = random.Next(100000, 1000000); //Vytvoří random číslo
                         command.Connection = connection;
@@ -51,7 +52,8 @@ namespace ZaverecnyProjektIT4_Machacek
                             command.Parameters.AddWithValue("lastName", user.LastName);
                             command.Parameters.AddWithValue("passwordHash", user.PasswordHash);
                             command.Parameters.AddWithValue("passwordSalt", user.PasswordSalt);
-                            command.Parameters.AddWithValue("birthDate", user.BirthDate);
+                            DateTime birthDate = DateTime.Parse(user.BirthDate);
+                            command.Parameters.AddWithValue("birthDate", birthDate); 
                             command.Parameters.AddWithValue("email", user.Email);
                             command.Parameters.AddWithValue("phone", user.PhoneNumber);
                             command.Parameters.AddWithValue("personalNumber", personalNumber);
@@ -60,11 +62,11 @@ namespace ZaverecnyProjektIT4_Machacek
 
                             MessageBox.Show("Nově vytvořené osobní číslo pro právě přidaného uživatele "+user.Name +" "+ user.LastName+  " je: " + personalNumber+".\nČíslo si prosím zapište, abyste ho mohli předat uživali pro jeho přihlášení.");
                         }
-                    }
-                    catch
-                    {
-                        MessageBox.Show("Přididání nového uživatele se nezdařilo!");
-                    }
+                    //}
+                    //catch
+                    //{
+                    //    MessageBox.Show("Přididání nového uživatele se nezdařilo!");
+                    //}
 
 
                 }
@@ -182,7 +184,7 @@ namespace ZaverecnyProjektIT4_Machacek
                     using(SqlCommand command = connection.CreateCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = @"SELECT u.Name, u.LastName, u.PersonalNumber, u.Email, u.Phone, r.RoleType FROM [User] u JOIN Role r ON u.RoleID = r.RoleID";
+                        command.CommandText = @"SELECT u.Name, u.LastName, u.PersonalNumber, u.Email, u.Phone, u.BirthDate, r.RoleType FROM [User] u JOIN Role r ON u.RoleID = r.RoleID";
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
@@ -194,7 +196,8 @@ namespace ZaverecnyProjektIT4_Machacek
                                     LastName = reader["LastName"].ToString(),
                                     Email = reader["Email"].ToString(),
                                     PhoneNumber = reader["Phone"].ToString(),
-                                    RoleName = reader["RoleType"].ToString()
+                                    RoleName = reader["RoleType"].ToString(),
+                                    BirthDate = reader["BirthDate"].ToString()
                                 };
 
                                 users.Add(user);

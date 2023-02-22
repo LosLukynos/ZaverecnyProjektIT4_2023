@@ -181,7 +181,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.lvFormRemoveUser.GridLines = true;
             this.lvFormRemoveUser.HideSelection = false;
             this.lvFormRemoveUser.Location = new System.Drawing.Point(0, 24);
-            this.lvFormRemoveUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvFormRemoveUser.Margin = new System.Windows.Forms.Padding(2);
             this.lvFormRemoveUser.Name = "lvFormRemoveUser";
             this.lvFormRemoveUser.Size = new System.Drawing.Size(801, 379);
             this.lvFormRemoveUser.TabIndex = 29;
@@ -196,26 +196,31 @@ namespace ZaverecnyProjektIT4_Machacek
             // 
             // colFirstName
             // 
+            this.colFirstName.DisplayIndex = 2;
             this.colFirstName.Text = "Jméno";
             this.colFirstName.Width = 135;
             // 
             // colLastName
             // 
+            this.colLastName.DisplayIndex = 3;
             this.colLastName.Text = "Přijmení";
             this.colLastName.Width = 150;
             // 
             // colEmail
             // 
+            this.colEmail.DisplayIndex = 4;
             this.colEmail.Text = "E-mail";
             this.colEmail.Width = 150;
             // 
             // colPhone
             // 
+            this.colPhone.DisplayIndex = 5;
             this.colPhone.Text = "Telefonní číslo";
             this.colPhone.Width = 150;
             // 
             // colRole
             // 
+            this.colRole.DisplayIndex = 1;
             this.colRole.Text = "Role";
             this.colRole.Width = 108;
             // 
@@ -231,7 +236,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "FormRemoveUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -26,7 +26,7 @@ namespace ZaverecnyProjektIT4_Machacek
         public string Password { get; }
         public byte[] PasswordHash { get; internal set; }
         public byte[] PasswordSalt { get; internal set; }
-        public DateTime BirthDate { get; set; }
+        public string BirthDate { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
 
@@ -39,7 +39,7 @@ namespace ZaverecnyProjektIT4_Machacek
             RoleID = roleID;
             Email = email;
             CreatePasswordHash(password);
-            BirthDate = birthDate;
+            BirthDate = birthDate.ToString("dd.MM.yyyy");
             PhoneNumber = phone;
             Name = firstName;
             LastName = lastName;
@@ -52,7 +52,7 @@ namespace ZaverecnyProjektIT4_Machacek
             PasswordSalt = passwordSalt;
             PasswordHash = passwordHash;
             RoleID = roleID;
-            BirthDate = birthDate;
+            BirthDate = birthDate.ToString("dd.MM.yyyy");
             Email = email;
             PhoneNumber = phone;
             Name = firstName;
@@ -66,6 +66,7 @@ namespace ZaverecnyProjektIT4_Machacek
             PasswordSalt = passwordSalt;
             PasswordHash = passwordHash;
             PersonalNumber = personalNumber;
+           
         }
 
         public bool VerifyPassword(string text)
