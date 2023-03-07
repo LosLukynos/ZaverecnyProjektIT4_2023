@@ -102,6 +102,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnAddNewUser.Name = "tsBtnAddNewUser";
             this.tsBtnAddNewUser.Size = new System.Drawing.Size(24, 24);
             this.tsBtnAddNewUser.Text = "Přidat uživatele";
+            this.tsBtnAddNewUser.Click += new System.EventHandler(this.tsBtnAddNewUser_Click_1);
             // 
             // tsBtnRemoveUser
             // 
@@ -111,6 +112,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnRemoveUser.Name = "tsBtnRemoveUser";
             this.tsBtnRemoveUser.Size = new System.Drawing.Size(24, 24);
             this.tsBtnRemoveUser.Text = "Odebrat uživatele";
+            this.tsBtnRemoveUser.Click += new System.EventHandler(this.tsBtnRemoveUser_Click);
             // 
             // tsBtnManageUsers
             // 
@@ -215,6 +217,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.button1.TabIndex = 32;
             this.button1.Text = "Potvrdit změny";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblAdminPersonalNumber
             // 

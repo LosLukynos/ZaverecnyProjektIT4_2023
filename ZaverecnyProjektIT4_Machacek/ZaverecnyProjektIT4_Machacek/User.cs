@@ -69,6 +69,16 @@ namespace ZaverecnyProjektIT4_Machacek
            
         }
 
+        public User(int roleID, string firstName, string lastName, DateTime birthDate, string email, string phone)
+        {
+            RoleID = roleID;
+            Name = firstName;
+            LastName = lastName;
+            BirthDate = birthDate.ToString("dd.MM.yyyy");
+            Email = email;
+            PhoneNumber = phone;
+        }
+
         public bool VerifyPassword(string text)
         {
 

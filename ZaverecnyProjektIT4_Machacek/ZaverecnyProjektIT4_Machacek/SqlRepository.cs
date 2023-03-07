@@ -211,6 +211,29 @@ namespace ZaverecnyProjektIT4_Machacek
             }
         }
 
+        public void UpdateUser(User user, int pn)
+        {
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using(SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = @"UPDATE [User] SET Name=@firstName, LastName=@lastName, Email=@email, Phone=@phone, BirthDate=@birthDate, RoleID=@role WHERE PersonalNumber=@personalNumber";
+                    command.Parameters.AddWithValue("role", user.RoleID);
+                    command.Parameters.AddWithValue("firstName", user.Name);
+                    command.Parameters.AddWithValue("lastName", user.LastName);
+                    DateTime birthDate = DateTime.Parse(user.BirthDate);
+                    command.Parameters.AddWithValue("birthDate", birthDate);
+                    command.Parameters.AddWithValue("email", user.Email);
+                    command.Parameters.AddWithValue("phone", user.PhoneNumber);
+                    command.Parameters.AddWithValue("personalNumber", pn);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Údaje byly aktualizovány.\nPro jejich načtení obnovte aktuální okno se seznamem uživatelů.");
+                }
+            }
+
+        }
+
     }
 }
 

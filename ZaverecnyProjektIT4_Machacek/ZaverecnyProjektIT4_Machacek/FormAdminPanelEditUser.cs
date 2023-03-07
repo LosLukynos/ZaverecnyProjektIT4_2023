@@ -14,7 +14,7 @@ namespace ZaverecnyProjektIT4_Machacek
     {
         List<User> users;
         SqlRepository sqlRepository = new SqlRepository();
-        public User User { get; }
+        public User User { get; set; }
         public FormAdminPanelEditUser(User user)
         {
             User = user;
@@ -39,6 +39,14 @@ namespace ZaverecnyProjektIT4_Machacek
             new FormAddNewUser(user).Show(this);
             Hide();
         }
+        private void tsBtnRemoveUser_Click(object sender, EventArgs e)
+
+        {
+            int pn = int.Parse(lblAdminPersonalNumber.Text);
+            var user = sqlRepository.GetUser(pn);
+            new FormRemoveUser(user).Show(this);
+            Hide();
+        }
 
         public void RefreshGUI()
         {
@@ -54,7 +62,7 @@ namespace ZaverecnyProjektIT4_Machacek
                     user.Email,
                     user.PhoneNumber,
                     user.BirthDate
-                }) ;
+                });
 
                 lvFormEditUser.Items.Add(listViewItem);
             }
@@ -94,5 +102,27 @@ namespace ZaverecnyProjektIT4_Machacek
             comboBoxUserRoleEdit.DisplayMember = "Item2";
             comboBoxUserRoleEdit.ValueMember = "Item1";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string firstName = txtFirstNameEdit.Text;
+            string lastName = txtLastNameEdit.Text;
+            string phoneNumber = txtPhoneNumberEdit.Text;
+            string email = txtEmailEdit.Text;
+            DateTime birthDate = dateTimePickerBirthDateEdit.Value.Date;
+            int role = Convert.ToInt32(comboBoxUserRoleEdit.SelectedValue);
+            int pn = int.Parse(lblEditUserPersonalNumber.Text);
+
+            try
+            {
+                User = new User(role, firstName, lastName, birthDate, email, phoneNumber);
+                sqlRepository.UpdateUser(User, pn);
+            }
+            catch
+            {
+                MessageBox.Show("Něco se pokazilo");
+            }
+        }
+
     }
 }
