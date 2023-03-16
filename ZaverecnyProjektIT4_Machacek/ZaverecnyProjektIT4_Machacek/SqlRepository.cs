@@ -9,6 +9,7 @@ using Microsoft.SqlServer.Server;
 using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Drawing.Drawing2D;
 
 namespace ZaverecnyProjektIT4_Machacek
 {
@@ -184,7 +185,7 @@ namespace ZaverecnyProjektIT4_Machacek
                     using(SqlCommand command = connection.CreateCommand())
                     {
                         command.Connection = connection;
-                        command.CommandText = @"SELECT u.Name, u.LastName, u.PersonalNumber, u.Email, u.Phone, u.BirthDate, r.RoleType FROM [User] u JOIN Role r ON u.RoleID = r.RoleID";
+                        command.CommandText = @"SELECT u.Name, u.LastName, u.PersonalNumber, u.Email, u.Phone, u.BirthDate, r.RoleType, c.ContractNumber, c.ContractName, w.WorkedHours FROM [User] u JOIN Role r ON u.RoleID = r.RoleID JOIN Contract c ON u.ContractNumber = c.ContractNumber JOIN WorkedHours w ON u.PersonalNumber = w.PersonalNumber";
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
@@ -197,7 +198,10 @@ namespace ZaverecnyProjektIT4_Machacek
                                     Email = reader["Email"].ToString(),
                                     PhoneNumber = reader["Phone"].ToString(),
                                     RoleName = reader["RoleType"].ToString(),
-                                    BirthDate = reader["BirthDate"].ToString()
+                                    BirthDate = reader["BirthDate"].ToString(),
+                                    ContractNumber = reader["ContractNumber"].ToString(),
+                                    ConcractName = reader["ContractName"].ToString(),
+                                    WorkedHours = float.Parse(reader["WorkedHours"].ToString()),
                                 };
 
                                 users.Add(user);

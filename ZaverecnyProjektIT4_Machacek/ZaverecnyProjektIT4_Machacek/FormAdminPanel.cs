@@ -46,5 +46,13 @@ namespace ZaverecnyProjektIT4_Machacek
             new FormAdminPanelEditUser(user).Show(this);
             Hide();
         }
+
+        private void tsBtnWorkedHours_Click(object sender, EventArgs e)
+        {
+            int pn = int.Parse(lblAdminPersonalNumber.Text);
+            var user = sqlRepository.GetUser(pn);
+            new FormAdminPanelWorkedHoursEmployees(user).Show(this);
+            Hide();
+        }
     }
 }

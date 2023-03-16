@@ -102,7 +102,6 @@ namespace ZaverecnyProjektIT4_Machacek
             this.tsBtnAddNewUser.Name = "tsBtnAddNewUser";
             this.tsBtnAddNewUser.Size = new System.Drawing.Size(24, 24);
             this.tsBtnAddNewUser.Text = "Přidat uživatele";
-            this.tsBtnAddNewUser.Click += new System.EventHandler(this.tsBtnAddNewUser_Click_1);
             // 
             // tsBtnRemoveUser
             // 
@@ -207,6 +206,7 @@ namespace ZaverecnyProjektIT4_Machacek
             this.bntExitProgramRemoveUser.TabIndex = 31;
             this.bntExitProgramRemoveUser.Text = "Ukončit program";
             this.bntExitProgramRemoveUser.UseVisualStyleBackColor = true;
+            this.bntExitProgramRemoveUser.Click += new System.EventHandler(this.bntExitProgramRemoveUser_Click);
             // 
             // button1
             // 

@@ -96,7 +96,7 @@
             this.tsBtnBackToMainPage.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsBtnBackToMainPage.Name = "tsBtnBackToMainPage";
             this.tsBtnBackToMainPage.Size = new System.Drawing.Size(24, 24);
-            this.tsBtnBackToMainPage.Text = "toolStripButton1";
+            this.tsBtnBackToMainPage.Text = "Zpět";
             this.tsBtnBackToMainPage.Click += new System.EventHandler(this.tsBtnBackToMainPage_Click);
             // 
             // tsBtnAddNewUser

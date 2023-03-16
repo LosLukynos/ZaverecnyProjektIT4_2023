@@ -112,10 +112,13 @@ namespace ZaverecnyProjektIT4_Machacek
             DateTime birthDate = dateTimePickerBirthDateEdit.Value.Date;
             int role = Convert.ToInt32(comboBoxUserRoleEdit.SelectedValue);
             int pn = int.Parse(lblEditUserPersonalNumber.Text);
+            string contractNumber = null;
+            string contractName = null;
+            int workedHours = 0;
 
             try
             {
-                User = new User(role, firstName, lastName, birthDate, email, phoneNumber);
+                User = new User(role, firstName, lastName, birthDate, email, phoneNumber, contractNumber, contractName, workedHours);
                 sqlRepository.UpdateUser(User, pn);
             }
             catch
@@ -124,5 +127,9 @@ namespace ZaverecnyProjektIT4_Machacek
             }
         }
 
+        private void bntExitProgramRemoveUser_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

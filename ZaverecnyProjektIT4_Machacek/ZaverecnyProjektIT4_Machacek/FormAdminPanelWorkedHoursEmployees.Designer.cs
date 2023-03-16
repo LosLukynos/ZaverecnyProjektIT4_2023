@@ -1,6 +1,6 @@
 ﻿namespace ZaverecnyProjektIT4_Machacek
 {
-    partial class FormAdminPanel
+    partial class FormAdminPanelWorkedHoursEmployees
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdminPanel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdminPanelWorkedHoursEmployees));
             this.lblAdminPersonalNumber = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsBtnBackToMainPage = new System.Windows.Forms.ToolStripButton();
             this.tsBtnAddNewUser = new System.Windows.Forms.ToolStripButton();
             this.tsBtnRemoveUser = new System.Windows.Forms.ToolStripButton();
             this.tsBtnManageUsers = new System.Windows.Forms.ToolStripButton();
             this.tsBtnWorkedHours = new System.Windows.Forms.ToolStripButton();
             this.tsBtnNewContract = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.bntExitProgramAdminPanel = new System.Windows.Forms.Button();
+            this.lvWorkedHoursAdminPanel = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bntExitProgramWorkedHours = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +59,7 @@
             this.lblAdminPersonalNumber.Location = new System.Drawing.Point(656, 5);
             this.lblAdminPersonalNumber.Name = "lblAdminPersonalNumber";
             this.lblAdminPersonalNumber.Size = new System.Drawing.Size(41, 13);
-            this.lblAdminPersonalNumber.TabIndex = 8;
+            this.lblAdminPersonalNumber.TabIndex = 12;
             this.lblAdminPersonalNumber.Text = "label1";
             // 
             // label2
@@ -60,7 +69,7 @@
             this.label2.Location = new System.Drawing.Point(455, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 10;
+            this.label2.TabIndex = 14;
             this.label2.Text = "Admin ";
             // 
             // label1
@@ -71,8 +80,35 @@
             this.label1.Location = new System.Drawing.Point(512, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 13);
-            this.label1.TabIndex = 9;
+            this.label1.TabIndex = 13;
             this.label1.Text = "Přihlášen pod osobním číslem: ";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsBtnBackToMainPage,
+            this.tsBtnAddNewUser,
+            this.tsBtnRemoveUser,
+            this.tsBtnManageUsers,
+            this.tsBtnWorkedHours,
+            this.tsBtnNewContract});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
+            this.toolStrip1.TabIndex = 11;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsBtnBackToMainPage
+            // 
+            this.tsBtnBackToMainPage.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBtnBackToMainPage.Image = ((System.Drawing.Image)(resources.GetObject("tsBtnBackToMainPage.Image")));
+            this.tsBtnBackToMainPage.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtnBackToMainPage.Name = "tsBtnBackToMainPage";
+            this.tsBtnBackToMainPage.Size = new System.Drawing.Size(24, 24);
+            this.tsBtnBackToMainPage.Text = "toolStripButton1";
             // 
             // tsBtnAddNewUser
             // 
@@ -82,7 +118,6 @@
             this.tsBtnAddNewUser.Name = "tsBtnAddNewUser";
             this.tsBtnAddNewUser.Size = new System.Drawing.Size(24, 24);
             this.tsBtnAddNewUser.Text = "Přidat uživatele";
-            this.tsBtnAddNewUser.Click += new System.EventHandler(this.tsBtnAddNewUser_Click);
             // 
             // tsBtnRemoveUser
             // 
@@ -92,7 +127,6 @@
             this.tsBtnRemoveUser.Name = "tsBtnRemoveUser";
             this.tsBtnRemoveUser.Size = new System.Drawing.Size(24, 24);
             this.tsBtnRemoveUser.Text = "Odebrat uživatele";
-            this.tsBtnRemoveUser.Click += new System.EventHandler(this.tsBtnRemoveUser_Click);
             // 
             // tsBtnManageUsers
             // 
@@ -102,7 +136,6 @@
             this.tsBtnManageUsers.Name = "tsBtnManageUsers";
             this.tsBtnManageUsers.Size = new System.Drawing.Size(24, 24);
             this.tsBtnManageUsers.Text = "Spravovat uživatele";
-            this.tsBtnManageUsers.Click += new System.EventHandler(this.tsBtnManageUsers_Click);
             // 
             // tsBtnWorkedHours
             // 
@@ -112,7 +145,6 @@
             this.tsBtnWorkedHours.Name = "tsBtnWorkedHours";
             this.tsBtnWorkedHours.Size = new System.Drawing.Size(24, 24);
             this.tsBtnWorkedHours.Text = "Odpracované hodiny uživatelů";
-            this.tsBtnWorkedHours.Click += new System.EventHandler(this.tsBtnWorkedHours_Click);
             // 
             // tsBtnNewContract
             // 
@@ -123,48 +155,85 @@
             this.tsBtnNewContract.Size = new System.Drawing.Size(24, 24);
             this.tsBtnNewContract.Text = "Vytvořit novou zakázku";
             // 
-            // toolStrip1
+            // lvWorkedHoursAdminPanel
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsBtnAddNewUser,
-            this.tsBtnRemoveUser,
-            this.tsBtnManageUsers,
-            this.tsBtnWorkedHours,
-            this.tsBtnNewContract});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(800, 27);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
+            this.lvWorkedHoursAdminPanel.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7});
+            this.lvWorkedHoursAdminPanel.GridLines = true;
+            this.lvWorkedHoursAdminPanel.HideSelection = false;
+            this.lvWorkedHoursAdminPanel.Location = new System.Drawing.Point(0, 31);
+            this.lvWorkedHoursAdminPanel.Name = "lvWorkedHoursAdminPanel";
+            this.lvWorkedHoursAdminPanel.Size = new System.Drawing.Size(800, 377);
+            this.lvWorkedHoursAdminPanel.TabIndex = 15;
+            this.lvWorkedHoursAdminPanel.UseCompatibleStateImageBehavior = false;
+            this.lvWorkedHoursAdminPanel.View = System.Windows.Forms.View.Details;
             // 
-            // bntExitProgramAdminPanel
+            // columnHeader1
             // 
-            this.bntExitProgramAdminPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bntExitProgramAdminPanel.Location = new System.Drawing.Point(10, 409);
-            this.bntExitProgramAdminPanel.Name = "bntExitProgramAdminPanel";
-            this.bntExitProgramAdminPanel.Size = new System.Drawing.Size(122, 29);
-            this.bntExitProgramAdminPanel.TabIndex = 25;
-            this.bntExitProgramAdminPanel.Text = "Ukončit program";
-            this.bntExitProgramAdminPanel.UseVisualStyleBackColor = true;
+            this.columnHeader1.Text = "Osobní číslo";
+            this.columnHeader1.Width = 120;
             // 
-            // FormAdminPanel
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Jméno";
+            this.columnHeader2.Width = 90;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Přijmení";
+            this.columnHeader3.Width = 120;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "E-mail";
+            this.columnHeader4.Width = 120;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Telefonní číslo";
+            this.columnHeader5.Width = 100;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Aktuální zakázka";
+            this.columnHeader6.Width = 120;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Hodiny celkem";
+            this.columnHeader7.Width = 125;
+            // 
+            // bntExitProgramWorkedHours
+            // 
+            this.bntExitProgramWorkedHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bntExitProgramWorkedHours.Location = new System.Drawing.Point(12, 414);
+            this.bntExitProgramWorkedHours.Name = "bntExitProgramWorkedHours";
+            this.bntExitProgramWorkedHours.Size = new System.Drawing.Size(122, 29);
+            this.bntExitProgramWorkedHours.TabIndex = 24;
+            this.bntExitProgramWorkedHours.Text = "Ukončit program";
+            this.bntExitProgramWorkedHours.UseVisualStyleBackColor = true;
+            // 
+            // FormAdminPanelWorkedHoursEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.bntExitProgramAdminPanel);
+            this.Controls.Add(this.bntExitProgramWorkedHours);
+            this.Controls.Add(this.lvWorkedHoursAdminPanel);
             this.Controls.Add(this.lblAdminPersonalNumber);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "FormAdminPanel";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Admin panel";
+            this.Name = "FormAdminPanelWorkedHoursEmployees";
+            this.Text = "FormAdminPanelWorkedHoursEmployees";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -173,15 +242,25 @@
         }
 
         #endregion
+
         private System.Windows.Forms.Label lblAdminPersonalNumber;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsBtnAddNewUser;
         private System.Windows.Forms.ToolStripButton tsBtnRemoveUser;
         private System.Windows.Forms.ToolStripButton tsBtnManageUsers;
         private System.Windows.Forms.ToolStripButton tsBtnWorkedHours;
         private System.Windows.Forms.ToolStripButton tsBtnNewContract;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.Button bntExitProgramAdminPanel;
+        private System.Windows.Forms.ToolStripButton tsBtnBackToMainPage;
+        private System.Windows.Forms.ListView lvWorkedHoursAdminPanel;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Button bntExitProgramWorkedHours;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
     }
 }

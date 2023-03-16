@@ -65,6 +65,12 @@
     <Compile Include="FormAdminPanelEditUser.Designer.cs">
       <DependentUpon>FormAdminPanelEditUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdminPanelWorkedHoursEmployees.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminPanelWorkedHoursEmployees.Designer.cs">
+      <DependentUpon>FormAdminPanelWorkedHoursEmployees.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConfirmRemoveUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdminPanelEditUser.resx">
       <DependentUpon>FormAdminPanelEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminPanelWorkedHoursEmployees.resx">
+      <DependentUpon>FormAdminPanelWorkedHoursEmployees.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConfirmRemoveUser.resx">
       <DependentUpon>FormConfirmRemoveUser.cs</DependentUpon>

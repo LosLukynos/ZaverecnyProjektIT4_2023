@@ -29,7 +29,9 @@ namespace ZaverecnyProjektIT4_Machacek
         public string BirthDate { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-
+        public string ContractNumber { get; set; }
+        public string ConcractName { get; set; }
+        public float WorkedHours { get; set; }
         public User()
         {
 
@@ -69,7 +71,7 @@ namespace ZaverecnyProjektIT4_Machacek
            
         }
 
-        public User(int roleID, string firstName, string lastName, DateTime birthDate, string email, string phone)
+        public User(int roleID, string firstName, string lastName, DateTime birthDate, string email, string phone, string contractNumber, string concractName, int workedHours)
         {
             RoleID = roleID;
             Name = firstName;
@@ -77,6 +79,9 @@ namespace ZaverecnyProjektIT4_Machacek
             BirthDate = birthDate.ToString("dd.MM.yyyy");
             Email = email;
             PhoneNumber = phone;
+            ContractNumber = contractNumber;
+            ConcractName = concractName;
+            WorkedHours = workedHours;
         }
 
         public bool VerifyPassword(string text)
